@@ -1,0 +1,24 @@
+mutation Verify($input: VerifyInput!) {
+  verify(input: $input) {
+    checkout {
+      id
+      checkoutType
+      customer {
+        firstName
+        lastName
+        phone {
+          msisdn
+        }
+      }
+      verified
+      completed
+    }
+    throttle {
+      remaining
+      reset
+      retryAfter
+      limit
+    }
+    clientMutationId
+  }
+}

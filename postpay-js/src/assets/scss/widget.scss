@@ -1,0 +1,566 @@
+.postpay-locale-ar {
+  --font-bold: 'Cairo-Bold' !important;
+  --font-medium: 'Cairo-Regular' !important;
+  --font-light: 'Cairo-Regular' !important;
+  direction: rtl !important;
+}
+
+.postpay-locale-en {
+  --font-bold: 'GreycliffCF-Bold' !important;
+  --font-medium: 'GreycliffCF-Medium' !important;
+  --font-light: 'GreycliffCF-Light' !important;
+}
+
+svg {
+  pointer-events: none !important;
+}
+
+.custom-postpay-product-widget {
+  max-width: 31rem !important;
+  background-color: #fff;
+  padding: 15px !important;
+  border-radius: 10px !important;
+  border: 1px solid #d7d7d7!important;
+
+  .postpay-paymet-text {
+    font-size: 17px !important;
+    line-height: 1.2 !important;
+    text-align: left !important;
+    font-family: 'GreycliffCF-Medium'!important;
+  }
+
+  .postpay-paymet-text-ar {
+    font-size: 17px !important;
+    line-height: 1.2 !important;
+  }
+
+  .postpay-product-widget-text {
+    font-family: 'GreycliffCF-Medium'!important;
+    color: #000000 !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between;
+  }
+  .postpay-brand {
+    text-transform: lowercase !important;
+    font-weight: bold !important;
+    font-size: 1em!important;
+    color: #3d3d3d!important;
+    font-family: 'GreycliffCF-Medium'!important;
+  }
+  .postpay-logo-wrapper {
+    background-color: #00BED5;
+    width: 90px !important;
+    height: 35px !important;
+    border-radius: 4px;
+    position: relative !important;
+    vertical-align: middle;
+
+    .postpay-logo-svg {
+      position: absolute !important;
+      left: 10px !important;
+      top: 0px !important;
+      width: 80% !important;
+      fill: #FFFFFF;
+    }
+  }
+}
+
+.postpay-product-widget-container {
+  display: block !important;
+  font-size: 1em !important;
+  -webkit-font-smoothing: auto !important;
+}
+
+.postpay-product-widget-text {
+  font-size: 1em !important;
+  font-family: var(--font-light)!important;
+  color: #3d3d3d !important;
+}
+
+.postpay-product-widget-text-bold {
+  font-family: var(--font-medium) !important;
+  font-size: 13px;
+  color: #000000 !important;
+}
+
+.postpay-product-widget-caption {
+  font-size: 11px !important;
+  font-family: var(--font-light) !important;
+  color: #888888d9 !important;
+  margin-top: 2px;
+}
+
+.postpay-product-price-wrapper {
+  display: inline-flex!important;
+  direction: ltr!important;
+}
+
+
+.postpay-product-price-wrapper-bold {
+  display: inline-flex !important;
+  direction: ltr !important;
+  font-family: var(--font-medium) !important;
+}
+
+
+.postpay-product-price {
+  padding-left: 3px;
+  font-size: 1em !important;
+
+  .postpay-product-price-decimal {
+    font-size: 0.8em !important;
+  }
+}
+
+.postpay-product-widget-learn-more {
+  display: flex !important;
+  align-items: center !important;
+  cursor: pointer !important;
+  font-size: 0.9em !important;
+  font-family: var(--font-light) !important;
+  color: #3d3d3d !important;
+
+
+  svg {
+    margin-left: 4px !important;
+    width: 10px !important;
+    height: 10px !important;
+    padding-top: 2px !important;
+  }
+}
+
+.postpay-link {
+  cursor: pointer;
+  text-decoration: none !important;
+  font-weight: bold !important;
+  color: #000000 !important;
+  font-family: var(--font-bold) !important;
+  font-size: 1.1em!important;
+
+  &:hover {
+    text-decoration: none !important;
+  }
+
+  svg {
+    display: inline !important;
+  }
+}
+
+.postpay-modal-backdrop {
+  position: fixed !important;
+  background: rgba(0, 0, 0, 0.7) !important;
+  top: 0 !important;
+  bottom: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  z-index: -1 !important;
+}
+
+.postpay-body-modal-open {
+  overflow: hidden !important;
+}
+
+.postpay-learn-more-modal {
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  height: 100% !important;
+  width: 100% !important;
+  opacity: 1 !important;
+  z-index: 9999999999 !important;
+  -webkit-font-smoothing: auto !important;
+
+  &.show {
+    overflow-x: hidden !important;
+    overflow-y: auto !important;
+    opacity: 1 !important;
+    background-color: rgba(0, 0, 0, 0.4) !important;
+  }
+
+  &.hide .postpay-learn-more-modal-close {
+    display: none !important;
+  }
+
+  &.inline-learn-modal-modal {
+    position: static !important;
+    top: auto !important;
+    left: auto !important;
+    height: auto !important;
+    width: auto !important;
+  }
+
+  &.inline-learn-modal-modal .postpay-learn-more-modal-content-wrapper {
+    position: static !important;
+    top: auto !important;
+    left: auto !important;
+    transform: none !important;
+    margin: initial !important;
+    padding: 0 !important;
+  }
+
+  &.inline-learn-modal-modal .postpay-learn-more-modal-content {
+    box-shadow: none !important;
+  }
+}
+
+.postpay-learn-more-modal-content-wrapper {
+  position: absolute !important;
+  top: 50% !important;
+  left: 50% !important;
+  transform: translate(-50%, -50%) !important;
+  z-index: 99999999 !important;
+  margin: 0 auto !important;
+  max-width: 100% !important;
+  width: 816px !important;
+}
+
+.postpay-learn-more-modal-content {
+  position: relative;
+  box-sizing: border-box !important;
+  width: 100% !important;
+  height: 100% !important;
+  padding: 24.4px 49px 40px 49px !important;
+  border-radius: 8px !important;
+  box-shadow: 0 0 40px 0 rgba(0, 0, 0, 0.08) !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: center !important;
+  align-items: center !important;
+  background: white !important;
+}
+
+.postpay-modal-title {
+  font-size: 40px !important;
+  color: #8abbd5 !important;
+  font-weight: bold !important;
+  margin-bottom: 29.6px !important;
+  font-family: var(--font-bold);
+  height: 40px;
+}
+
+.postpay-modal-subtitle {
+  font-size: 25px !important;
+  color: #000000 !important;
+  font-weight: 600 !important;
+  margin: 40px 0 !important;
+  font-family: var(--font-medium);
+  min-height: 40px;
+}
+
+.postpay-modal-description {
+  font-size: 16px !important;
+  text-align: center !important;
+  margin-bottom: 30px !important;
+  font-family: var(--font-light);
+  color: #000000 !important;
+
+  &>span {
+    font-family: var(--font-medium);
+    color: #000000 !important;
+  }
+}
+
+.postpay-how-it-works-container {
+  display: flex !important;
+  flex-direction: row !important;
+  justify-content: center !important;
+  align-items: flex-start !important;
+}
+
+.postpay-how-it-works-item {
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: center !important;
+  align-items: center !important;
+  margin-right: 30px !important;
+  font-family: var(--font-light);
+  color: #3d3d3d !important;
+  width: 28% !important;
+
+  &:last-child {
+    margin-right: 0 !important;
+  }
+}
+
+.postpay-locale-ar {
+  .postpay-how-it-works-item:last-child {
+    margin-right: 30px !important;
+  }
+
+  .postpay-how-it-works-item:first-child {
+    margin-right: 0 !important;
+  }
+
+  .postpay-how-it-works-item-title {
+    font-size: 15px !important;
+  }
+}
+
+.postpay-learn-more-modal-action {
+  font-size: 12px !important;
+  font-family: var(--font-light) !important;
+  text-align: center !important;
+  margin-top: 32px !important;
+  color: #000000 !important;
+}
+
+.postpay-learn-more-modal-action-small {
+  font-size: 16px !important;
+  font-family: var(--font-medium) !important;
+  text-align: center !important;
+  margin-top: 29px !important;
+  color: #000000 !important;
+}
+
+.postpay-learn-more-modal-footer {
+  margin-top: 30px !important;
+  font-family: var(--font-light);
+  text-align: center !important;
+  font-size: 10px !important;
+  color: #3d3d3d !important;
+
+  a.underline {
+    text-decoration: underline !important;
+    text-decoration-color: #888888 !important;
+  }
+
+  a {
+    text-decoration-style: none !important;
+    text-decoration: none !important;
+    color: #3d3d3d !important;
+  }
+}
+
+.postpay-how-it-works-item-image {
+  display: flex !important;
+  justify-content: center !important;
+  margin-bottom: 10px !important;
+
+  svg {
+    margin: 0 auto !important;
+    width: 50px !important;
+    height: 50px !important;
+  }
+}
+
+.postpay-how-it-works-item-text-wrapper {
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: center !important;
+  align-items: center !important;
+}
+
+.postpay-how-it-works-item-title {
+  font-size: 13px !important;
+  margin-bottom: 7px !important;
+  text-align: center !important;
+  font-family: var(--font-medium);
+  color: #000000 !important;
+}
+
+.postpay-how-it-works-item-description {
+  font-size: 13px !important;
+  text-align: center !important;
+  line-height: 1.27 !important;
+  font-family: var(--font-light) !important;
+  color: #3d3d3d !important;
+  text-align: center !important;
+}
+
+.postpay-learn-more-modal-close {
+  width: 35px !important;
+  height: 35px !important;
+  position: absolute !important;
+  top: 15px !important;
+  right: 0px !important;
+  cursor: pointer !important;
+  z-index: 999999 !important;
+
+  svg {
+    width: 11px !important;
+    height: 11px !important;
+  }
+}
+
+.postpay-how-it-works-item-image-wrapper-circle {
+  margin-bottom: 18px !important;
+  width: 47px;
+  height: 47px;
+
+  &>svg {
+    width: 47px !important;
+    height: 47px !important;
+    fill: none !important;
+    stroke: none !important;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .postpay-locale-ar {
+    .postpay-how-it-works-item:last-child {
+      margin-right: 0 !important;
+    }
+  }
+
+  .postpay-learn-more-modal {
+    background: white !important;
+  }
+
+  .postpay-learn-more-modal-content-wrapper {
+    width: 100% !important;
+    margin: 0 !important;
+    max-width: 100% !important;
+    padding: 0 !important;
+    height: 100% !important;
+  }
+
+  .postpay-learn-more-modal-content {
+    box-shadow: none !important;
+    max-width: 100% !important;
+    border: none !important;
+    padding: 0 20px !important;
+  }
+
+  .postpay-how-it-works-container {
+    flex-direction: column !important;
+  }
+
+  .postpay-how-it-works-item {
+    width: 100% !important;
+    margin-bottom: 30px !important;
+    margin-right: 0 !important;
+
+    &:last-child {
+      margin-bottom: 0 !important;
+    }
+
+    flex-direction: row !important;
+    align-items: center !important;
+  }
+
+  .postpay-how-it-works-item-title {
+    min-height: auto !important;
+  }
+
+  .postpay-learn-more-modal-close {
+    right: 0 !important;
+  }
+
+  .postpay-modal-title {
+    margin: 50px 0 !important;
+  }
+
+  .postpay-modal-description {
+    text-align: left !important;
+    font-family: var(--font-medium) !important;
+  }
+
+  .postpay-how-it-works-item-text-wrapper {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+  }
+
+  .postpay-how-it-works-item-description {
+    font-family: var(--font-medium) !important;
+    color: #000000 !important;
+
+    &--ar {
+      text-align: right !important;
+    }
+
+    &--en {
+      text-align: left !important;
+    }
+  }
+
+  .postpay-how-it-works-item-image-wrapper-circle {
+    margin-bottom: 0 !important;
+
+    &--en {
+      margin-right: 24px !important;
+      margin-left: 0px !important;
+    }
+
+    &--ar {
+      margin-right: 0 !important;
+      margin-left: 24px !important
+    }
+  }
+}
+
+.postpay-product-price {
+  font-family: var(--font-medium) !important;
+}
+
+.postpay-brand {
+  text-transform: lowercase !important;
+  display: inline-block !important;
+  font-size: 1em!important;
+  font-family: var(--font-light)!important;
+  color: #3d3d3d!important;
+}
+
+.custom-postpay-product-widget.dark {
+  background-color: #000000;
+
+  .postpay-logo-wrapper {
+    background-color: #00BED5;
+    vertical-align: middle;
+  }
+
+  .postpay-product-price-wrapper {
+    color: #00BED5 !important;
+  }
+
+  .postpay-product-widget-text {
+    color: white !important;
+  }
+
+  .postpay-product-widget-learn-more {
+    color: white !important;
+
+    svg {
+      fill: white !important;
+    }
+  }
+
+  .postpay-link {
+    color: white !important;
+  }
+}
+
+.custom-postpay-product-widget.blue {
+  background-color: #00BED5;
+
+  .postpay-logo-wrapper {
+    background-color: #000000;
+  }
+
+  .postpay-product-price-wrapper {
+    color: #000000 !important;
+  }
+
+  .postpay-product-widget-text {
+    color: #FFFFFF !important;
+  }
+
+  .postpay-info-svg {
+    fill: #FFFFFF !important;
+  }
+}
+
+.postpay-locale-ar {
+  .postpay-learn-more-modal-content {
+    .postpay-modal-title {
+      margin-bottom: 25px !important;
+    }
+  }
+}
+
+.postpay-icon-cross {
+  position: absolute !important;
+  background-color: transparent !important;
+  right: 100% !important;
+  transform: translateX(-44%) !important;
+}

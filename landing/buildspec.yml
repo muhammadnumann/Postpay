@@ -1,0 +1,38 @@
+---
+version: 0.2
+
+env:
+  parameter-store:
+    DOCKER_PASSWORD: docker-password
+
+phases:
+  install:
+    commands:
+      - docker login -u postpay -p $DOCKER_PASSWORD
+    runtime-versions:
+      docker: 18
+  build:
+    commands:
+      - |
+        case ${CODEBUILD_WEBHOOK_HEAD_REF##*/} in
+          dev) export NODE_ENV=staging ;;
+          master) export NODE_ENV=production ;;
+        esac
+      - make build export
+  post_build:
+    commands:
+      - |
+        if [ "$CODEBUILD_BUILD_SUCCEEDING" = "1" ]; then
+          case ${NODE_ENV} in
+            staging)
+              export S3_BUCKET=dev.postpay.io
+              export DISTRIBUTION_ID=E3C8BZOHLKNCYW
+              ./deploy.sh
+              ;;
+            production)
+              export S3_BUCKET=postpay.io
+              export DISTRIBUTION_ID=E3ABD2EZV8EQBE
+              ./deploy.sh
+              ;;
+          esac
+        fi

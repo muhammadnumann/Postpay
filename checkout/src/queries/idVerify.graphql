@@ -1,0 +1,39 @@
+mutation IdVerify($input: IDVerifyInput!) {
+  idVerify(input: $input) {
+    checkout {
+      id
+      checkoutType
+      customer {
+        id
+        firstName
+        lastName
+        dateOfBirth
+        idNumber
+        phone {
+          msisdn
+        }
+        paymentMethods {
+          edges {
+            node {
+              ... on Card {
+                id
+                name
+                firstSixDigits
+                lastFourDigits
+                hasExpired
+                created
+                expYear
+                expMonth
+                brand
+                token
+                supportedCurrencies
+              }
+            }
+          }
+        }
+      }
+      verified
+      completed
+    }
+  }
+}

@@ -1,0 +1,3 @@
+User-agent: *
+Disallow:
+Sitemap: https://postpay.io/sitemap.xml

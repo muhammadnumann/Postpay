@@ -1,0 +1,114 @@
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Effect": "Allow",
+            "Action": [
+                "iam:AttachRolePolicy",
+                "iam:CreateRole",
+                "iam:GetRole",
+                "iam:PutRolePolicy",
+                "iam:UpdateAssumeRolePolicy",
+                "iam:PassRole"
+            ],
+            "Resource": [
+                "arn:aws:iam::*:role/api-*-zappa-iam-role"
+            ]
+        },
+        {
+            "Effect": "Allow",
+            "Action": [
+                "apigateway:DELETE",
+                "apigateway:GET",
+                "apigateway:PATCH",
+                "apigateway:POST",
+                "apigateway:PUT",
+                "events:DeleteRule",
+                "events:DescribeRule",
+                "events:ListRules",
+                "events:ListTargetsByRule",
+                "events:ListRuleNamesByTarget",
+                "events:PutRule",
+                "events:PutTargets",
+                "events:RemoveTargets",
+                "cloudformation:CreateStack",
+                "cloudformation:DeleteStack",
+                "cloudformation:DescribeStackResource",
+                "cloudformation:DescribeStacks",
+                "cloudformation:ListStackResources",
+                "cloudformation:UpdateStack",
+                "logs:DescribeLogStreams",
+                "logs:FilterLogEvents",
+                "route53:ListHostedZones",
+                "route53:ChangeResourceRecordSets",
+                "route53:GetHostedZone",
+                "ec2:DescribeSecurityGroups",
+                "ec2:DescribeSubnets"
+            ],
+            "Resource": [
+                "*"
+            ]
+        },
+        {
+            "Effect": "Allow",
+            "Action": [
+                "lambda:AddPermission",
+                "lambda:CreateFunction",
+                "lambda:DeleteFunction",
+                "lambda:GetFunction",
+                "lambda:GetAlias",
+                "lambda:GetPolicy",
+                "lambda:InvokeFunction",
+                "lambda:ListVersionsByFunction",
+                "lambda:RemovePermission",
+                "lambda:UpdateFunctionCode",
+                "lambda:GetFunctionConfiguration",
+                "lambda:UpdateFunctionConfiguration"
+            ],
+            "Resource": [
+                "arn:aws:lambda:*:*:function:api-*"
+            ]
+        },
+        {
+            "Effect": "Allow",
+            "Action": [
+                "s3:CreateBucket",
+                "s3:ListBucket"
+            ],
+            "Resource": [
+                "arn:aws:s3:::postpay-config"
+            ]
+        },
+        {
+            "Effect": "Allow",
+            "Action": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "s3:PutObject",
+                "s3:CreateMultipartUpload",
+                "s3:AbortMultipartUpload",
+                "s3:ListMultipartUploadParts",
+                "s3:ListBucketMultipartUploads"
+            ],
+            "Resource": [
+                "arn:aws:s3:::postpay-config/*"
+            ]
+        },
+        {
+            "Effect" : "Allow",
+            "Action" : [
+                "kms:Decrypt"
+            ],
+            "Resource" : [
+                "arn:aws:kms:*:*:key/ce1f20c9-7b59-46ed-b234-4b9c14f03451"
+            ]
+        },
+        {
+            "Effect": "Allow",
+            "Action": [
+                "ssm:GetParameters"
+            ],
+            "Resource": "arn:aws:ssm:*:*:parameter/api-codacy-token"
+        }
+    ]
+}

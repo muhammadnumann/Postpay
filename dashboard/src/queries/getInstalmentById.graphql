@@ -1,0 +1,51 @@
+query GetInstalmentById($id: ID!) {
+  instalment(id: $id) {
+    id
+    amount
+    scheduled
+    amount
+    refundedAmount
+    status
+    penaltyFee
+    instalmentPlan {
+      id
+      secure
+      paymentMethod {
+        ... on Card {
+          id
+          name
+          firstSixDigits
+          lastFourDigits
+          hasExpired
+          created
+          expYear
+          expMonth
+          brand
+          assigned
+          token
+          supportedCurrencies
+        }
+      }
+      order {
+        totalAmount
+        merchant {
+          name
+        }
+        currency
+      }
+      instalments(orderBy: "scheduled") {
+        edges {
+          node {
+            id
+            amount
+            penaltyFee
+            status
+            scheduled
+            completed
+            refundedAmount
+          }
+        }
+      }
+    }
+  }
+}

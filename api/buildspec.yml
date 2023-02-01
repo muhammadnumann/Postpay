@@ -1,0 +1,20 @@
+---
+version: 0.2
+
+env:
+  variables:
+    DOCKER_COMPOSE_FILE: build-compose.yml
+  parameter-store:
+    CODACY_PROJECT_TOKEN: api-codacy-token
+    DOCKER_PASSWORD: docker-password
+
+phases:
+  pre_build:
+    commands:
+      - docker login -u postpay -p $DOCKER_PASSWORD
+  build:
+    commands:
+      - make lambda ci
+  post_build:
+    commands:
+      - ./lambda/deploy.sh

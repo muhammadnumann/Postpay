@@ -1,0 +1,144 @@
+@font-face {
+  font-family: GreycliffCF-Bold;
+  src: url('../assets/fonts/GreycliffCF-Bold.otf') format('opentype');
+}
+
+@font-face {
+  font-family: GreycliffCF-BoldOblique;
+  src: url('../assets/fonts/GreycliffCF-BoldOblique.otf') format('opentype');
+}
+
+@font-face {
+  font-family: GreycliffCF-Medium;
+  src: url('../assets/fonts/GreycliffCF-Medium.otf') format('opentype');
+}
+
+@font-face {
+  font-family: GreycliffCF-DemiBold;
+  src: url('../assets/fonts/GreycliffCF-DemiBold.otf') format('opentype');
+}
+
+@font-face {
+  font-family: GreycliffCF-Light;
+  src: url('../assets/fonts/GreycliffCF-Light.otf') format('opentype');
+}
+
+@font-face {
+  font-family: GreycliffCF-Regular;
+  src: url('../assets/fonts/GreycliffCF-Regular.otf') format('opentype');
+}
+
+@font-face {
+  font-family: GreycliffCF-Heavy;
+  src: url('../assets/fonts/GreycliffCF-Heavy.otf') format('opentype');
+}
+
+@font-face {
+  font-family: MadaniArabic-ExtraLight;
+  src: url('../assets/fonts/Madani-ExtraLight.ttf') format('opentype');
+}
+
+@font-face {
+  font-family: MadaniArabic-Light;
+  src: url('../assets/fonts/Madani-Light.ttf') format('opentype');
+}
+
+@font-face {
+  font-family: MadaniArabic-Medium;
+  src: url('../assets/fonts/Madani-Medium.ttf') format('opentype');
+}
+
+@font-face {
+  font-family: MadaniArabic-SemiBold;
+  src: url('../assets/fonts/Madani-SemiBold.ttf') format('opentype');
+}
+
+@font-face {
+  font-family: SFPro-Medium;
+  src: url('../assets/fonts/SFPro-Medium.otf') format('opentype');
+}
+
+html {
+  -ms-overflow-style: -ms-autohiding-scrollbar;
+  height: -webkit-fill-available;
+}
+
+body {
+  min-height: 100vh;
+  min-height: -webkit-fill-available;
+}
+
+body,
+#root {
+  background: #eff1f2;
+  margin: 0;
+  padding: 0;
+  font-size: 16px;
+  color: #575756;
+}
+
+#root {
+  height: 100vh;
+}
+
+html.fixed-height,
+html.fixed-height body,
+html.fixed-height body #root {
+  height: 100vh;
+  overflow: hidden;
+}
+
+* {
+  box-sizing: border-box;
+  font-size: inherit;
+  font-family: 'GreycliffCF-Light', 'Helvetica Neue', helvetica, Arial,
+    sans-serif;
+}
+
+a {
+  cursor: pointer;
+  text-decoration: none;
+  color: #575756;
+}
+
+a.highlight {
+  font-family: 'GreycliffCF-Bold';
+  color: #3ebbd2;
+}
+
+.fullscreen-iframe {
+  position: fixed;
+  z-index: 9999999999;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+  background: white;
+}
+
+.iframe-loader {
+  position: fixed;
+  z-index: 9999999998;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+  background: white;
+
+  > div {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  &.hidden {
+    display: none;
+  }
+}

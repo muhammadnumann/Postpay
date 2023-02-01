@@ -1,0 +1,43 @@
+{
+  "name": "postpay-js",
+  "description": "A Javascript client to integrate postpay components to your website",
+  "version": "1.0.0",
+  "main": "dist/postpay.js",
+  "repository": "https://github.com/postpayio/postpay-js",
+  "author": "David Tran (david@postpay.io)",
+  "license": "SEE LICENSE IN LICENSE",
+  "scripts": {
+    "dev": "nodemon --watch .env --exec webpack-dev-server",
+    "build": "cross-env NODE_ENV=production webpack --mode production"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.8.4",
+    "@babel/plugin-proposal-object-rest-spread": "^7.8.3",
+    "@babel/preset-env": "^7.8.4",
+    "babel-loader": "^8.0.6",
+    "cross-env": "^7.0.2",
+    "css-loader": "^3.4.2",
+    "cssnano": "^4.1.10",
+    "dotenv": "^8.2.0",
+    "html-webpack-plugin": "^3.2.0",
+    "node-sass": "^4.13.1",
+    "nodemon": "^2.0.2",
+    "postcss-import": "^12.0.1",
+    "postcss-loader": "^3.0.0",
+    "postcss-preset-env": "^6.7.0",
+    "raw-loader": "^4.0.0",
+    "sass-loader": "^8.0.2",
+    "webpack": "^4.41.6",
+    "webpack-cli": "^3.3.11",
+    "webpack-dev-server": "^3.10.3",
+    "webpack-visualizer-plugin": "^0.1.11"
+  },
+  "dependencies": {
+    "@babel/plugin-proposal-class-properties": "^7.12.1",
+    "@sentry/browser": "^7.12.1",
+    "@sentry/tracing": "^7.12.1",
+    "add": "^2.0.6",
+    "lodash": "^4.17.15",
+    "yarn": "^1.22.19"
+  }
+}

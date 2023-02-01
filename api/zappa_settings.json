@@ -1,0 +1,305 @@
+{
+    "common": {
+        "runtime": "python3.8",
+        "aws_region": "ap-south-1",
+        "s3_bucket": "postpay-config",
+        "project_name": "api",
+        "log_level": "INFO",
+        "lambda_handler": "config.handler.lambda_handler",
+        "django_settings": "config.settings.lambda",
+        "xray_tracing": true,
+        "memory_size": 3008,
+        "assume_policy": "lambda/policies/assume.json",
+        "num_retained_versions": 20,
+        "lambda_description": "Function that make up the official PostPay API",
+        "apigateway_description": "Application that make up the official PostPay API",
+        "aws_kms_key_arn": "arn:aws:kms:ap-south-1:593660039602:key/ce1f20c9-7b59-46ed-b234-4b9c14f03451"
+    },
+    "dev": {
+        "extends": "common",
+        "role_name": "api-dev-zappa-iam-role",
+        "attach_policy": "lambda/policies/attach_dev.json",
+        "remote_env": "s3://postpay-config/api/dev/env.json",
+        "vpc_config" : {
+            "SubnetIds": [
+                "subnet-09167b14f2cde5fe4",
+                "subnet-00de3288f09d508aa"
+            ],
+            "SecurityGroupIds": [
+                "sg-05951f5fdd6da7402"
+            ]
+        },
+        "events": [
+            {
+                "function": "payment_methods.virtual_cards.schedule.deactivate_cards",
+                "expression": "cron(*/15 * * * ? *)"
+            },
+            {
+                "function": "payment_methods.virtual_cards.schedule.card_expiry_reminder",
+                "expression": "cron(*/10 * * * ? *)"
+            },
+            {
+                "function": "notifications.schedule.credit_bureau_warning",
+                "expression": "cron(*/5 * * * ? *)"
+            }
+        ],
+        "environment_variables": {
+            "DJANGO_ENV": "staging",
+            "DJANGO_DEBUG": "true",
+            "DJANGO_SETTINGS": "lambda",
+            "DJANGO_ALLOWED_HOSTS": "*",
+            "DJANGO_PARENT_HOST": "postpay.io",
+            "DJANGO_HOSTS": "api=api-dev,admin=admin-dev",
+            "DJANGO_AWS_STORAGE_BUCKET_NAME": "static-api-dev.postpay.io",
+            "DJANGO_DEFAULT_FROM_EMAIL": "postpay <info@postpay.io>",
+            "MERCHANTS_TABLE": "merchants-dev",
+            "MAILGUN_SENDER_DOMAIN": "mail.postpay.io",
+            "X_FRAME_OPTIONS": "",
+            "CORS_ORIGIN_ALLOW_ALL": "true",
+            "CORS_ALLOW_CREDENTIALS": "true",
+            "CORS_ALLOW_HEADERS": "x-user-agent,x-accept-language,merchant-id,merchant-ids,x-one,x-wc-session",
+            "CHECKOUT_REDIRECT_URL": "https://checkout-dev.postpay.io",
+            "DASHBOARD_DOMAIN": "dashboard-dev.postpay.io",
+            "CONNECT_FUNCTION_NAME": "connect-dev",
+            "CONNECT_STAGE": "dev",
+            "CONNECT_HOST": "connect-dev.postpay.io",
+            "CONNECT_DEFAULT_GATEWAY_NAME": "slack",
+            "SLACK_GATEWAY_CHANNEL": "gateway",
+            "VERIFY_CODES_TABLE": "verify-codes-dev",
+            "CARDS_TABLE": "cards-dev",
+            "GATEWAY_TOKENS_TABLE": "gateway-tokens-dev",
+            "DIRECT_PAYMENTS_TABLE": "direct-payments-dev",
+            "HOOK_LOGS_TABLE": "hook-logs-dev",
+            "RULES_TABLE": "rules-dev",
+            "APP_RULES_TABLE": "app-rules-dev",
+            "JWT_EXPIRATION_DELTA": "86400",
+            "JWT_COOKIE_SECURE": "true",
+            "JWT_COOKIE_SAMESITE": "None",
+            "MJML_TO_HTML_FUNCTION_NAME": "mjml-dev-to-html",
+            "HTML_TO_PDF_FUNCTION_NAME": "html-to-pdf-dev",
+            "PUSH_NOTIFICATIONS_FUNCTION_NAME": "firebase-notifications-dev-notifications",
+            "MAF_PRODUCT_ID": "10",
+            "MAF_DELIVERY_METHOD_ID": "4",
+            "MAF_MERCHANT_ID": "id_d16b643a60904b22907c9107e35b680c",
+            "MAF_IS_SANDBOX": "true",
+            "SHOPIFY_API_VERSION": "2022-01",
+            "APPLE_PAY_MERCHANT_IDENTIFIER": "merchant.com.postpay.dev",
+            "APPLE_PAY_CHECKOUT_INITIATIVE_CONTEXT": "checkout-dev.postpay.io",
+            "APPLE_PAY_DASHBOARD_INITIATIVE_CONTEXT": "dashboard-dev.postpay.io"
+        }
+    },
+    "sandbox": {
+        "extends": "common",
+        "role_name": "api-sandbox-zappa-iam-role",
+        "attach_policy": "lambda/policies/attach_sandbox.json",
+        "remote_env": "s3://postpay-config/api/sandbox/env.json",
+        "vpc_config" : {
+            "SubnetIds": [
+                "subnet-07730346a5df304c6",
+                "subnet-001fbbca862561562"
+            ],
+            "SecurityGroupIds": [
+                "sg-0d7d06cbcc7e9e1ab"
+            ]
+        },
+        "events": [
+            {
+                "function": "shopify_gateway.schedule.cancel_pending_orders",
+                "expression": "cron(*/5 * * * ? *)"
+            }
+        ],
+        "environment_variables": {
+            "DJANGO_ENV": "sandbox",
+            "DJANGO_SETTINGS": "lambda",
+            "DJANGO_ALLOWED_HOSTS": "*",
+            "DJANGO_PARENT_HOST": "postpay.io",
+            "DJANGO_HOSTS": "api=sandbox",
+            "DJANGO_AWS_STORAGE_BUCKET_NAME": "static-api.postpay.io",
+            "DJANGO_DEFAULT_FROM_EMAIL": "postpay <info@postpay.io>",
+            "MAILGUN_SENDER_DOMAIN": "mail.postpay.io",
+            "CORS_ORIGIN_ALLOW_ALL": "true",
+            "CORS_ALLOW_HEADERS": "x-user-agent,x-accept-language,merchant-id,merchant-ids,x-one,x-wc-session",
+            "CHECKOUT_REDIRECT_URL": "https://checkout-sandbox.postpay.io",
+            "DASHBOARD_DOMAIN": "dashboard-sandbox.postpay.io",
+            "CONNECT_FUNCTION_NAME": "connect-sandbox",
+            "CONNECT_STAGE": "sandbox",
+            "CONNECT_HOST": "connect-sandbox.postpay.io",
+            "CONNECT_DEFAULT_GATEWAY_NAME": "slack",
+            "VERIFY_CODES_TABLE": "verify-codes-sandbox",
+            "CARDS_TABLE": "cards-sandbox",
+            "GATEWAY_TOKENS_TABLE": "gateway-tokens-sandbox",
+            "DIRECT_PAYMENTS_TABLE": "direct-payments-sandbox",
+            "HOOK_LOGS_TABLE": "hook-logs-sandbox",
+            "JWT_EXPIRATION_DELTA": "3600",
+            "JWT_COOKIE_SECURE": "true",
+            "JWT_HIDE_TOKEN_FIELDS": "true",
+            "MJML_TO_HTML_FUNCTION_NAME": "mjml-sandbox-to-html",
+            "HTML_TO_PDF_FUNCTION_NAME": "html-to-pdf-prod",
+            "SHOPIFY_API_VERSION": "2022-01"
+        }
+    },
+    "prod": {
+        "extends": "common",
+        "role_name": "api-prod-zappa-iam-role",
+        "attach_policy": "lambda/policies/attach_prod.json",
+        "remote_env": "s3://postpay-config/api/prod/env.json",
+        "timeout_seconds": 300,
+        "vpc_config" : {
+            "SubnetIds": [
+                "subnet-07730346a5df304c6",
+                "subnet-001fbbca862561562"
+            ],
+            "SecurityGroupIds": [
+                "sg-0d7d06cbcc7e9e1ab"
+            ]
+        },
+        "events": [
+            {
+                "function": "instalment_plans.schedule.elasticsearch_index",
+                "expression": "cron(*/10 * * * ? *)"
+            },
+            {
+                "function": "instalment_plans.schedule.harvest",
+                "expression": "cron(*/11 * * * ? *)"
+            },
+            {
+                "function": "instalment_plans.schedule.set_unpaid_instalments",
+                "expression": "cron(0 0 * * ? *)"
+            },
+            {
+                "function": "instalment_plans.schedule.recoup",
+                "expression": "cron(*/12 * * * ? *)"
+            },
+            {
+                "function": "instalment_plans.schedule.void_authorizations",
+                "expression": "cron(*/5 * * * ? *)"
+            },
+            {
+                "function": "orders.schedule.scheduled_refunds",
+                "expression": "cron(*/14 * * * ? *)"
+            },
+            {
+                "function": "payments.schedule.create_payments",
+                "expression": "cron(0 20 * * ? *)"
+            },
+            {
+                "function": "payments.schedule.send_payments",
+                "expression": "cron(1-59 20 * * ? *)"
+            },
+            {
+                "function": "payments.schedule.create_payments_report",
+                "expression": "cron(10 20 * * ? *)"
+            },
+            {
+                "function": "payments.schedule.create_invoices",
+                "expression": "cron(0 0 1 * ? *)"
+            },
+            {
+                "function": "payments.schedule.send_invoices",
+                "expression": "cron(1-59 0 1 * ? *)"
+            },
+            {
+                "function": "shopify_gateway.schedule.capture_pending_orders",
+                "expression": "cron(0 * * * ? *)"
+            },
+            {
+                "function": "payment_methods.virtual_cards.schedule.deactivate_cards",
+                "expression": "cron(*/15 * * * ? *)"
+            },
+            {
+                "function": "notifications.schedule.reminder_notification",
+                "expression": "cron(*/25 * * * ? *)"
+            },
+            {
+                "function": "notifications.schedule.additional_reminder_notification",
+                "expression": "cron(*/25 * * * ? *)"
+            },
+            {
+                "function": "notifications.schedule.unpaid_instalment_reminder",
+                "expression": "cron(0 15 * * ? *)"
+            },
+            {
+                "function": "notifications.schedule.credit_bureau_warning",
+                "expression": "cron(0 14 * * ? *)"
+            },
+            {
+                "function": "notifications.schedule.report_notification",
+                "expression": "cron(0 3 * * ? *)"
+            },
+            {
+                "function": "payment_methods.virtual_cards.schedule.card_expiry_reminder",
+                "expression": "cron(*/10 * * * ? *)"
+            },
+            {
+                "function": "instalment_plans.schedule.salary_dates_recoup",
+                "expression": "cron(*/5 11-17 26,27,28,30,1,3 * ? *)"
+            }
+        ],
+        "environment_variables": {
+            "ELASTICSEARCH_HOST": "http://10.0.2.194:9200",
+            "DJANGO_ENV": "production",
+            "DJANGO_SETTINGS": "lambda",
+            "DJANGO_ALLOWED_HOSTS": "*",
+            "DJANGO_PARENT_HOST": "postpay.io",
+            "DJANGO_AWS_STORAGE_BUCKET_NAME": "static-api.postpay.io",
+            "DJANGO_DEFAULT_FROM_EMAIL": "postpay <info@postpay.io>",
+            "MERCHANTS_TABLE": "merchants-prod",
+            "MAILGUN_SENDER_DOMAIN": "mail.postpay.io",
+            "CORS_ORIGIN_ALLOW_ALL": "true",
+            "CORS_ALLOW_HEADERS": "x-user-agent,x-accept-language,merchant-id,merchant-ids,x-one,x-wc-session",
+            "CHECKOUT_REDIRECT_URL": "https://checkout.postpay.io",
+            "CONNECT_FUNCTION_NAME": "connect-prod",
+            "CONNECT_STAGE": "prod",
+            "CONNECT_HOST": "connect.postpay.io",
+            "CONNECT_COUNTRY_GATEWAYS": "SA=mshastra",
+            "VERIFY_CODES_TABLE": "verify-codes-prod",
+            "CARDS_TABLE": "cards-prod",
+            "PAYMENT_METHOD_VALIDATION": "true",
+            "GATEWAY_TOKENS_TABLE": "gateway-tokens-prod",
+            "DIRECT_PAYMENTS_TABLE": "direct-payments-prod",
+            "CKO_SANDBOX": "false",
+            "TUTUKA_HOST": "http://api.tutuka.com/companion",
+            "PAYNOW_3DS_THRESHOLDS": "AED=0",
+            "HOOK_LOGS_TABLE": "hook-logs-prod",
+            "NEO4J_URI": "bolt://10.0.2.114:7687",
+            "NEO4J_USER": "neo4j",
+            "NEO4J_SECURE": "false",
+            "RULES_TABLE": "rules-prod",
+            "APP_RULES_TABLE": "app-rules-prod",
+            "DENIED_THROTTLING_THRESHOLD": "3",
+            "DENIED_THROTTLING_DELTA": "168",
+            "PENDING_THROTTLING_THRESHOLD": "3",
+            "KSA_CREDIT_DEFAULT_URL": "https://odmx5gctagcc5qzkw5ob73zcw40qelbw.lambda-url.ap-south-1.on.aws/predict",
+            "BLACKLIST_EMAIL_PATTERNS": "dxb,love",
+            "JWT_COOKIE_SECURE": "true",
+            "JWT_VERIFY_EXPIRATION": "true",
+            "JWT_EXPIRATION_DELTA": "3600",
+            "JWT_HIDE_TOKEN_FIELDS": "true",
+            "INSTALMENT_PLAN_APPROVED_BCC": "accounts@postpay.io,newinstalment@postpay.io",
+            "INSTALMENT_PAID_BCC": "accounts@postpay.io,customeraccounts@postpay.io",
+            "INSTALMENT_UNPAID_BCC": "customeraccounts@postpay.io",
+            "REMINDER_BCC": "accounts@postpay.io",
+            "REFUND_BCC": "accounts@postpay.io,refundaccounts@postpay.io",
+            "PREPAYMENT_BCC": "accounts@postpay.io,customeraccounts@postpay.io",
+            "REPORT_CC": "debtrecovery@postpay.io",
+            "PAYMENTS_SUPPORT_EMAIL": "retailersupport@postpay.io",
+            "PAYMENTS_REPORT_EMAIL": "accounts@postpay.io",
+            "PAYMENT_BCC": "accounts@postpay.io,retailersupport@postpay.io",
+            "INVOICE_BCC": "accounts@postpay.io",
+            "MJML_TO_HTML_FUNCTION_NAME": "mjml-prod-to-html",
+            "HTML_TO_PDF_FUNCTION_NAME": "html-to-pdf-prod",
+            "MAILCHIMP_PLATFORM_IDS": "woocommerce=d8bbd9cbae,shopify=0b52119f96,magento2=7cdf218fd4",
+            "PUSH_NOTIFICATIONS_FUNCTION_NAME": "firebase-notifications-prod-notifications",
+            "PUSH_NOTIFICATIONS_STAGE": "prod",
+            "PAYMENTS_TRNS": "AED=100450721400003,SAR=310801573200003",
+            "MAF_PRODUCT_ID": "177",
+            "MAF_DELIVERY_METHOD_ID": "4",
+            "MAF_MERCHANT_ID": "id_db32804f131a4e4886eb7eb50932dd72",
+            "MAF_IS_SANDBOX": "false",
+            "SHOPIFY_API_VERSION": "2021-01",
+            "APPLE_PAY_MERCHANT_IDENTIFIER": "merchant.com.postpay.io",
+            "APPLE_PAY_CHECKOUT_INITIATIVE_CONTEXT": "checkout.postpay.io",
+            "APPLE_PAY_DASHBOARD_INITIATIVE_CONTEXT": "dashboard.postpay.io"
+        }
+    }
+}

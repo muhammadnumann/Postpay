@@ -1,0 +1,2 @@
+django-debug-toolbar==3.2.1
+django-graphiql-debug-toolbar==0.2.0

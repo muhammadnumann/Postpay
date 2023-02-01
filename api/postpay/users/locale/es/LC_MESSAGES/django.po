@@ -1,0 +1,64 @@
+# api-users i18n
+# Copyright (C) PostPay Technology Limited 2019
+# This file is distributed under the same license as the api package.
+# Translators:
+# mongkok <dani@postpay.io>, 2019.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: api-users\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-01-14 10:37+0000\n"
+"PO-Revision-Date: 2018-07-09 10:00+0000\n"
+"Last-Translator: mongkok <dani@postpay.io>\n"
+"Language-Team: Spanish\n"
+"Language: es\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: postpay/users/apps.py:7
+msgid "Users"
+msgstr "Usuarios"
+
+#: postpay/users/models.py:16
+msgid "email address"
+msgstr "correo electrónico"
+
+#: postpay/users/models.py:17
+msgid "first name"
+msgstr "nombre"
+
+#: postpay/users/models.py:18
+msgid "last name"
+msgstr "aprellido"
+
+#: postpay/users/models.py:19
+msgid "is active"
+msgstr "está activo"
+
+#: postpay/users/models.py:20
+msgid "is staff"
+msgstr "es staff"
+
+#: postpay/users/models.py:22
+msgid "language"
+msgstr "idioma"
+
+#: postpay/users/models.py:31
+msgid "timezone"
+msgstr ""
+
+#: postpay/users/models.py:35
+msgid "avatar"
+msgstr ""
+
+#: postpay/users/models.py:45
+msgid "user"
+msgstr "usuario"
+
+#: postpay/users/models.py:46
+msgid "users"
+msgstr "usuarios"

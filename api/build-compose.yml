@@ -1,0 +1,25 @@
+---
+version: '3'
+
+services:
+  django:
+    build:
+      context: .
+      dockerfile: lambda/Dockerfile
+    image: postpay/api:lambda
+    volumes:
+      - .:/var/task
+    depends_on:
+      - postgres
+    environment:
+      - DJANGO_SETTINGS=base
+      - POSTGRES_HOST=postgres
+      - DATABASE_URL=postgres://postgres:@postgres/postgres
+      - AWS_DEFAULT_REGION=${AWS_DEFAULT_REGION}
+      - AWS_CONTAINER_CREDENTIALS_RELATIVE_URI=${AWS_CONTAINER_CREDENTIALS_RELATIVE_URI}
+    command: tail -f /dev/null
+
+  postgres:
+    image: postgres
+    environment:
+      - POSTGRES_HOST_AUTH_METHOD=trust

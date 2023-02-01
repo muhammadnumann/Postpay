@@ -1,0 +1,46 @@
+mutation IdVerify($input: IDVerifyInput!) {
+  idVerify(input: $input) {
+    customer {
+      id
+      firstName
+      lastName
+      phone {
+        msisdn
+      }
+      idNumber
+      dateOfBirth
+      paymentMethods {
+        edges {
+          node {
+            ... on Card {
+              id
+              name
+              firstSixDigits
+              lastFourDigits
+              hasExpired
+              created
+              expYear
+              expMonth
+              brand
+              assigned
+              supportedCurrencies
+            }
+            ... on ApplePayCard {
+              id
+              name
+              firstSixDigits
+              lastFourDigits
+              hasExpired
+              created
+              expYear
+              expMonth
+              brand
+              assigned
+              supportedCurrencies
+            }
+          }
+        }
+      }
+    }
+  }
+}

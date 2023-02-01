@@ -1,0 +1,6 @@
+.*
+!.bandit
+!.hadolint.yml
+
+development.yml
+id_rsa

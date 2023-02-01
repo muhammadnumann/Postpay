@@ -1,0 +1,34 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .custom-font-regular {
+    font-family: var(--font-regular);
+  }
+
+  .custom-font-light {
+    font-family: var(--font-light);
+  }
+
+  .custom-font-medium {
+    font-family: var(--font-medium);
+  }
+
+  .custom-font-bold {
+    font-family: var(--font-bold);
+  }
+
+  .custom-font-demi-bold {
+    font-family: var(--font-demi-bold);
+  }
+
+  .max-w-90-percent {
+    max-width: 90%;
+  }
+}
+
+@import
+"fonts",
+"default"
+

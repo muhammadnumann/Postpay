@@ -1,0 +1,145 @@
+scalar Scalars
+scalar Phone
+scalar string
+scalar Date
+
+type Story {
+  id: string
+  title: string
+  url: string
+}
+
+type HackerNews {
+  topStories: [Story]
+}
+
+type Customer {
+  id: ID!
+  firstName: string!
+  lastName: string!
+  idNumber: string!
+  dateOfBirth: Date
+  phone: PhoneType!
+}
+
+type PhoneType {
+  msisdn: string!
+  country: CountryType!
+}
+
+type CountryType {
+  cca2: string!
+  cca3: string!
+  ccn3: string!
+  name: string!
+  capital: [string]!
+  callingCodes: [string]
+  nationalPrefix: string!
+  internationalPrefix: string!
+  nationalDestinationCodeLengths: [Int]
+  nationalNumberLengths: [Int]
+  currencies: [CurrencyType]
+  timezones: [string]
+}
+
+type CurrencyType {
+  code: string!
+  number: string!
+  name: string!
+  symbol: string!
+  majorUnitName: string!
+  minorUnit: Scalars!
+}
+
+type CheckoutNode {
+  id: string
+  customer: Customer
+  verified: Date
+  completed: Date
+}
+
+type CheckoutMerchantNode {
+  id: ID!
+  name: string!
+  maxAmount: Float
+  minAmount: Float
+  countries: [CountryType]!
+}
+
+input VerifyInput {
+  checkoutId: ID!
+  msisdn: Phone!
+  clientMutationId: string
+}
+
+input CheckCodeInput {
+  checkoutId: ID!
+  code: string!
+  clientMutationId: string
+}
+
+input ProfileInput {
+  checkoutId: ID!
+  firstName: string
+  lastName: string
+  dateOfBirth: Date
+  idNumber: string
+  clientMutationId: string
+}
+
+input IDVerifyInput {
+  checkoutId: ID!
+  idNumber: String!
+  clientMutationId: String
+}
+
+type Throttle {
+  remaining: Int
+  reset: Int
+  retryAfter: Int
+  limit: Int
+}
+
+type VerifyResult {
+  verify: VerifyPayload
+}
+
+type VerifyPayload {
+  checkout: CheckoutNode!
+  clientMutationId: string
+  throttle: Throttle
+}
+
+type IDVerifyPayload {
+  checkout: CheckoutNode!
+  clientMutationId: string
+}
+
+type CheckCodePayload {
+  checkout: CheckoutNode!
+  clientMutationId: string
+  throttle: Throttle
+}
+
+type ProfilePayload {
+  checkout: CheckoutNode!
+  clientMutationId: string
+}
+
+type Query {
+  hn: HackerNews
+  checkout(id: ID!): CheckoutNode
+}
+
+type Mutation {
+  verify(input: VerifyInput!): VerifyPayload
+  checkCode(input: CheckCodeInput!): CheckCodePayload
+  profile(input: ProfileInput!): ProfilePayload
+  idVerify(input: IDVerifyInput!): IDVerifyPayload
+  updateOrderEmail(input: UpdateOrderEmail!): UpdateEmailPayload
+}
+
+schema {
+  query: Query
+  mutation: Mutation
+}

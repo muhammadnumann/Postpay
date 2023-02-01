@@ -1,0 +1,75 @@
+---
+version: '3'
+
+services:
+  django:
+    build: .
+    image: postpay/api
+    container_name: postpay_api
+    volumes:
+      - .:/app
+      - ~/.aws:/root/.aws
+    networks:
+      - backtier
+    depends_on:
+      - postgres
+      - redis
+    profiles: ['api']
+    stdin_open: true
+    tty: true
+    env_file:
+      - .envs/.django
+      - .envs/.neo4j
+      - .envs/.postgres
+    ports:
+      - 8000:8000
+
+  redis:
+    image: redis:alpine
+    volumes:
+      - redis:/var/lib/redis
+    networks:
+      - backtier
+    profiles: ['api']
+
+  postgres:
+    image: postgres:alpine
+    volumes:
+      - postgres:/var/lib/postgresql/data
+    networks:
+      - backtier
+    profiles: ['api']
+    env_file:
+      - .envs/.postgres
+    environment:
+      - POSTGRES_HOST_AUTH_METHOD=trust
+
+  neo4j:
+    image: neo4j
+    volumes:
+      - neo4j:/data
+      - ./neo4j/plugins:/plugins
+      - ./neo4j/import:/var/lib/neo4j/import
+    networks:
+      - backtier
+    profiles: ['neo4j']
+    env_file:
+      - .envs/.neo4j
+    environment:
+      - NEO4J_allow_csv_import_from_file_urls=true
+      - NEO4J_apoc_export_file_enabled=true
+      - NEO4J_apoc_import_file_enabled=true
+      - NEO4J_apoc_import_file_use__neo4j__config=true
+    ports:
+      # REST API
+      - 127.0.0.1:7474:7474
+      # Cypher Shell
+      - 127.0.0.1:7687:7687
+
+volumes:
+  redis:
+  postgres:
+  neo4j:
+
+networks:
+  backtier:

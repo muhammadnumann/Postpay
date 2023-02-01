@@ -1,0 +1,299 @@
+@font-face {
+  font-family: GreycliffCF-Bold;
+  src: url($cdn + '/fonts/GreycliffCF-Bold.otf') format('opentype');
+}
+
+@font-face {
+  font-family: GreycliffCF-Light;
+  src: url($cdn + '/fonts/GreycliffCF-Light.otf') format('opentype');
+}
+
+@font-face {
+  font-family: GreycliffCF-Medium;
+  src: url($cdn + '/fonts/GreycliffCF-Medium.otf') format('opentype');
+}
+
+@font-face {
+  font-family: GreycliffCF-Regular;
+  src: url($cdn + '/fonts/GreycliffCF-Regular.otf') format('opentype');
+}
+
+@font-face {
+  font-family: GreycliffCF-DemiBold;
+  src: url($cdn + '/fonts/GreycliffCF-DemiBold.otf') format('opentype');
+}
+
+
+@font-face {
+  font-family: Cairo-Bold;
+  src: url($cdn + '/fonts/Cairo-Bold.ttf') format('opentype');
+}
+
+@font-face {
+  font-family: Cairo-Regular;
+  src: url($cdn + '/fonts/Cairo-Regular.ttf') format('opentype');
+}
+@font-face {
+  font-family: Madani-Medium;
+  src: url($cdn + '/fonts/madani/Madani-Medium.ttf') format('opentype');
+}
+
+@font-face {
+  font-family: Madani-Light;
+  src: url($cdn + '/fonts/madani/Madani-Light.ttf') format('opentype');
+}
+
+.postpay-locale-ar {
+  --font-bold: 'Cairo-Bold'!important;
+  --font-demi-bold: 'Madani-Medium'!important;
+  --font-medium: 'Cairo-Regular'!important;
+  --font-light: 'Cairo-Regular'!important;
+  --font-regular: 'Madani-Light'!important;
+  direction: rtl!important;
+}
+
+.postpay-locale-en {
+  --font-bold: 'GreycliffCF-Bold'!important;
+  --font-demi-bold: 'GreycliffCF-DemiBold'!important;
+  --font-medium: 'GreycliffCF-Medium'!important;
+  --font-light: 'GreycliffCF-Light'!important;
+  --font-regular: 'GreycliffCF-Regular'!important;
+}
+
+.postpay-blur-background {
+  content: '' !important;
+  z-index: 99999 !important;
+  background: rgba(0,0,0,.9) !important;
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  bottom: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+}
+
+.postpay-modal {
+  z-index: 2147483647 !important;
+  width: 100% !important;
+  height: 100% !important;
+  max-height: none !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  bottom: 0 !important;
+  position: fixed !important;
+  overflow: hidden !important;
+  border-radius: 0 !important;
+  background: rgba(0, 0, 0, 0.9)!important;
+  -webkit-font-smoothing: auto !important;
+}
+
+.postpay-iframe-container {
+  position: absolute !important;
+  top: 50% !important;
+  left: 50% !important;
+  transform: translate(-50%, -50%) !important;
+  border-radius: 5px !important;
+  box-shadow: 1px 6px 19px 2px rgba(0, 0, 0, 0.3) !important;
+  background: white !important;
+  width: 400px !important;
+  height: 95% !important;
+  max-width: 95% !important;
+  animation: postpayShowIframe 0.3s forwards !important;
+  overflow: hidden !important;
+
+  &.hide {
+    animation: postpayHideIframe 0.3s forwards !important;
+  }
+}
+
+.postpay-iframe {
+  position: absolute !important;
+  top: 50% !important;
+  left: 50% !important;
+  transform: translate(-50%, -50%) !important;
+  width: 100% !important;
+  height: 100% !important;
+  border: none !important;
+}
+
+.postpay-close-modal-button {
+  position: absolute !important;
+  top: 15px !important;
+  right: 10px !important;
+  height: 30px !important;
+  border-radius: 5px !important;
+  background: white !important;
+  width: 61px !important;
+}
+
+.postpay-overlay {
+  font-family: var(--font-regular);
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  bottom: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  width: 100vw !important;
+  height: 100vh !important;
+  background: rgba(124,124,123,255) !important;
+  text-align: center !important;
+  z-index: 2147483646 !important;
+  transform: translateZ(0) !important;
+  animation-fill-mode: forwards !important;
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  flex-direction: column !important;
+  row-gap: 64px !important;
+
+  &.hide,
+  &.show {
+    animation-name: postpayShowIframe !important;
+    animation-duration: 0.6s !important;
+    transform: translateZ(0) !important;
+  }
+}
+
+.postpay-text-top {
+  font-family: var(--font-demi-bold);
+  color: #fff !important;
+  font-size: 16px !important;
+}
+
+.postpay-text-pre {
+  color: #fff !important;
+  font-size: 16px !important;
+  margin-top: -35px !important;
+  max-width: 239px !important;
+  line-height: 25px !important;
+}
+
+.postpay-text-post {
+  color: #fff !important;
+  font-size: 16px !important;
+}
+
+.postpay-logo {
+  width: 177px !important;
+}
+
+.postpay-logo-wrapper {
+  position: relative !important;
+  display: inline-block !important;
+  width: 60px !important;
+  height: 14px !important;
+
+  &.small {
+    width: 50px !important;
+
+    .postpay-logo-svg {
+      top: 5px !important;
+      left: 1px !important;
+    }
+  }
+
+  &.medium {
+    width: 72px !important;
+
+    .postpay-logo-svg {
+      top: 0 !important;
+    }
+  }
+
+  &.large {
+    width: 123.1px !important;
+    height: 29.6px !important;
+  }
+}
+
+.postpay-locale-ar {
+  .postpay-logo-wrapper {
+    width: 70px !important;
+    height: 17px !important;
+    vertical-align: middle;
+
+    &.small {
+      width: 50px !important;
+      height: 12px !important;
+
+      .postpay-logo-svg {
+        top: 1px !important;
+        left: 0px !important;
+      }
+    }
+
+    &.medium {
+      width: 72px !important;
+
+      .postpay-logo-svg {
+        top: 0 !important;
+      }
+    }
+
+    &.large {
+      width: 160px !important;
+      height: 40px !important;
+    }
+  }
+
+}
+
+.postpay-logo-svg {
+  position: absolute !important;
+  top: 3px !important;
+  left: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+}
+
+.postpay-z-index {
+  z-index: 100 !important;
+}
+
+.postpay-modal-spinner {
+  width: 50px !important;
+  height: 50px !important;
+  position: absolute !important;
+  top: 50% !important;
+  left: 50% !important;
+  transform: translate(-50%, -50%) !important;
+}
+
+@keyframes postpayShowIframe {
+  0% {
+    opacity: 0 !important;
+    transform: translate(-50%, -20%) !important;
+  }
+
+  100% {
+    opacity: 1 !important;
+    transform: translate(-50%, -50%) !important;
+  }
+}
+
+@keyframes postpayHideIframe {
+  0% {
+    opacity: 1 !important;
+    transform: translate(-50%, -50%) !important;
+  }
+
+  100% {
+    opacity: 0 !important;
+    transform: translate(-50%, -20%) !important;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .postpay-iframe-container {
+    width: 100% !important;
+    height: 100% !important;
+    max-width: 100% !important;
+    max-height: 100% !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+  }
+}

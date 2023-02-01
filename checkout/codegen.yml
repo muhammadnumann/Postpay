@@ -1,0 +1,14 @@
+overwrite: true
+schema: "https://api-dev.postpay.io/graphql/checkout"
+config:
+  scalars:
+    DateTime: Date
+generates:
+  src/graphql/index.tsx:
+    plugins:
+      - typescript
+      - typescript-operations
+      - typescript-react-apollo
+  src/graphql/fragments.tsx:
+    plugins:
+      - fragment-matcher

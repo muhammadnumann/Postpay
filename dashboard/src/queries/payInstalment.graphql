@@ -1,0 +1,8 @@
+mutation payInstalment($input: PayInstalmentInput!) {
+  payInstalment(input: $input) {
+    instalment {
+      completed
+      status
+    }
+  }
+}

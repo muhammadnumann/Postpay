@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="48" height="47" viewBox="0 0 48 47">
+    <g data-name="Group 6541" transform="translate(.171 -.204)">
+        <ellipse data-name="Ellipse 22" cx="24" cy="23.5" rx="24" ry="23.5" transform="translate(-.171 .204)" style="fill:#3ebbd2"/>
+        <g data-name="Group 6155">
+            <g data-name="Group 6524">
+                <path data-name="Path 4319" d="M25.855 20.842a3.985 3.985 0 1 1 3.985-3.985 3.989 3.989 0 0 1-3.985 3.985m0-6.538a2.553 2.553 0 1 0 2.553 2.553 2.556 2.556 0 0 0-2.553-2.557" transform="translate(-1.883 4.73)" style="fill:#fff"/>
+                <path data-name="Path 4320" d="M16.57 42.129a.716.716 0 0 1-.716-.716 5.714 5.714 0 0 1 5.707-5.707.716.716 0 1 1 0 1.432 4.281 4.281 0 0 0-4.276 4.276.716.716 0 0 1-.716.716" transform="translate(2.411 -11.566)" style="fill:#fff"/>
+                <path data-name="Path 4321" d="M43.434 47.072h-3.5a.716.716 0 0 1 0-1.432h3.5a.716.716 0 0 1 0 1.432" transform="translate(-14.263 -18.656)" style="fill:#fff"/>
+                <path data-name="Path 4322" d="M46.048 44.46a.716.716 0 0 1-.716-.716v-3.5a.716.716 0 0 1 1.432 0v3.5a.716.716 0 0 1-.716.716" transform="translate(-18.627 -14.293)" style="fill:#fff"/>
+            </g>
+            <path data-name="Path 4323" d="M13.282 1.87A11.412 11.412 0 1 1 1.87 13.282 11.424 11.424 0 0 1 13.282 1.87m0-1.87a13.282 13.282 0 1 0 13.281 13.282A13.282 13.282 0 0 0 13.282 0" style="fill:#fff" transform="translate(10.537 10.801)"/>
+        </g>
+    </g>
+</svg>

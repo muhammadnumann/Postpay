@@ -1,0 +1,6 @@
+mutation Pay($input: PayInput!) {
+  pay(input: $input) {
+    status
+    code
+  }
+}

@@ -1,0 +1,93 @@
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Effect": "Allow",
+            "Action": [
+                "logs:*"
+            ],
+            "Resource": "arn:aws:logs:*:*:*"
+        },
+        {
+            "Effect": "Allow",
+            "Action": [
+                "xray:PutTraceSegments",
+                "xray:PutTelemetryRecords"
+            ],
+            "Resource": [
+                "*"
+            ]
+        },
+        {
+            "Effect": "Allow",
+            "Action": [
+                "ec2:CreateNetworkInterface",
+                "ec2:AttachNetworkInterface",
+                "ec2:DescribeNetworkInterfaces",
+                "ec2:DeleteNetworkInterface"
+            ],
+            "Resource": [
+                "*"
+            ]
+        },
+        {
+            "Effect": "Allow",
+            "Action": [
+                "lambda:InvokeFunction",
+                "lambda:GetAlias",
+                "lambda:GetFunction"
+            ],
+            "Resource": [
+                "arn:aws:lambda:*:*:function:api-dev"
+            ]
+        },
+        {
+            "Effect": "Allow",
+            "Action": [
+                "lambda:InvokeFunction"
+            ],
+            "Resource": [
+                "arn:aws:lambda:*:*:function:connect-dev",
+                "arn:aws:lambda:*:*:function:mjml-dev-to-html",
+                "arn:aws:lambda:*:*:function:html-to-pdf-dev",
+                "arn:aws:lambda:*:*:function:firebase-notifications-dev-notifications"
+            ]
+        },
+        {
+            "Effect": "Allow",
+            "Action": [
+                "s3:GetObject"
+            ],
+            "Resource": [
+                "arn:aws:s3:::postpay-config/api/dev/*"
+            ]
+        },
+        {
+            "Effect": "Allow",
+            "Action": [
+                "s3:*"
+            ],
+            "Resource": [
+                "arn:aws:s3:::static-api-dev.postpay.io/*"
+            ]
+        },
+        {
+            "Effect": "Allow",
+            "Action": [
+                "dynamodb:*"
+            ],
+            "Resource": [
+                "arn:aws:dynamodb:*:*:table/merchants-dev",
+                "arn:aws:dynamodb:*:*:table/bincodes",
+                "arn:aws:dynamodb:*:*:table/ip-lookups",
+                "arn:aws:dynamodb:*:*:table/verify-codes-dev",
+                "arn:aws:dynamodb:*:*:table/cards-dev",
+                "arn:aws:dynamodb:*:*:table/gateway-tokens-dev",
+                "arn:aws:dynamodb:*:*:table/direct-payments-dev",
+                "arn:aws:dynamodb:*:*:table/rules-dev",
+                "arn:aws:dynamodb:*:*:table/app-rules-dev",
+                "arn:aws:dynamodb:*:*:table/hook-logs-dev"
+            ]
+        }
+    ]
+}

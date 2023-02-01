@@ -1,0 +1,50 @@
+
+.postpay-locale-ar {
+  .navbar_item {
+    font-family: var(--font-demi-bold);
+  }
+}
+
+.navbar_item {
+  @apply cursor-pointer text-[17px];
+  color: #000000;
+  font-family: var(--font-medium);
+}
+
+.bot-hambu{
+  transition: all ease .3s;
+  transform: rotate(45deg) translateY(-4px) translateX(-4px);
+}
+.top-hambu{
+  transition: all ease .3s;
+  transform: rotate(-45deg) translateY(3px) translateX(-3px);
+}
+
+.nav-container{
+  background-color: rgba(0,0,0, .8);
+  width: 50vw;
+  padding-top: 100px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.drawer-open{
+  transform: translateX(-100%);
+  animation: .3s linear moveOpen;
+  animation-fill-mode: forwards;
+}
+
+.drawer-close{
+  transform: translateX(0%);
+  animation: .3s linear moveClose;
+  animation-fill-mode: forwards;
+}
+@keyframes moveOpen {
+  from {transform: translateX(200%);}
+  to {transform: translateX(0%);}
+}
+@keyframes moveClose {
+  from {transform: translateX(0%);}
+  to {transform: translateX(200%); display: none;}
+}

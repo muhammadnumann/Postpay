@@ -1,0 +1,76 @@
+query GetInstalmentPlans(
+  $status: String
+  $currency: String
+  $first: Int
+  $before: String
+  $after: String
+  $last: Int
+) {
+  instalmentPlans(
+    status: $status
+    currency: $currency
+    first: $first
+    last: $last
+    before: $before
+    after: $after
+  ) {
+    edges {
+      cursor
+      node {
+        id
+        created
+        completed
+        cancelled
+        totalPayable
+        totalCost
+        secure
+        downpayment {
+          amount
+        }
+        paymentMethod {
+          ... on Card {
+            id
+            lastFourDigits
+            brand
+            token
+            expYear
+            expMonth
+            supportedCurrencies
+          }
+        }
+        order {
+          totalAmount
+          orderId
+          merchant {
+            name
+            slug
+          }
+          affiliateMerchant {
+            name
+          }
+          currency
+        }
+        instalments(orderBy: "scheduled") {
+          edges {
+            node {
+              id
+              amount
+              penaltyFee
+              status
+              scheduled
+              completed
+              refundedAmount
+            }
+          }
+        }
+      }
+    }
+    totalCount
+    pageInfo {
+      startCursor
+      endCursor
+      hasPreviousPage
+      hasNextPage
+    }
+  }
+}

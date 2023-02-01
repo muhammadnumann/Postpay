@@ -1,0 +1,114 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-03-12 11:41+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 "
+"&& n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5;\n"
+
+#: postpay/users/apps.py:7
+msgid "Users"
+msgstr ""
+
+#: postpay/users/graphql/mutations.py:55
+msgid "Old password is not valid."
+msgstr ""
+
+#: postpay/users/graphql/mutations.py:99
+#: postpay/users/restful/authentication.py:28
+msgid "Invalid token."
+msgstr ""
+
+#: postpay/users/models.py:17
+msgid "email address"
+msgstr ""
+
+#: postpay/users/models.py:18
+msgid "first name"
+msgstr ""
+
+#: postpay/users/models.py:19
+msgid "last name"
+msgstr ""
+
+#: postpay/users/models.py:20
+msgid "is active"
+msgstr ""
+
+#: postpay/users/models.py:21
+msgid "is staff"
+msgstr ""
+
+#: postpay/users/models.py:23
+msgid "language"
+msgstr ""
+
+#: postpay/users/models.py:27
+msgid "timezone"
+msgstr ""
+
+#: postpay/users/models.py:28
+msgid "phone"
+msgstr ""
+
+#: postpay/users/models.py:31
+msgid "avatar"
+msgstr ""
+
+#: postpay/users/models.py:41
+msgid "user"
+msgstr ""
+
+#: postpay/users/models.py:42
+msgid "users"
+msgstr ""
+
+#: postpay/users/tasks.py:20
+msgid "Password reset on postpay.io"
+msgstr ""
+
+#: postpay/users/templates/users/mail/password_reset.mjml:7
+msgid "Password reset"
+msgstr ""
+
+#: postpay/users/templates/users/mail/password_reset.mjml:24
+msgid "Hi,"
+msgstr ""
+
+#: postpay/users/templates/users/mail/password_reset.mjml:30
+msgid ""
+"You're receiving this email because you requested a <span class=\"bold"
+"\">password reset</span> for your user account at postpay.io."
+msgstr ""
+
+#: postpay/users/templates/users/mail/password_reset.mjml:35
+msgid "Please go to the following page and choose a new password:"
+msgstr ""
+
+#: postpay/users/templates/users/mail/password_reset.mjml:46
+msgid "The postpay team"
+msgstr ""
+
+#: postpay/users/templates/users/mail/password_reset.mjml:56
+msgid ""
+"\n"
+"        Kindly\n"
+"        <a href=\"mailto:support@postpay.io\">\n"
+"          <span class=\"primary\">contact us</span>\n"
+"        </a>\n"
+"        if you have any questions or issues\n"
+"        "
+msgstr ""

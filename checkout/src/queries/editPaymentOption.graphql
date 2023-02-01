@@ -1,0 +1,7 @@
+mutation EditPaymentOption($input: EditPaymentOptionInput!) {
+  editPaymentOption(input: $input) {
+    checkout {
+      id
+    }
+  }
+}

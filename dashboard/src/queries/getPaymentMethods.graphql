@@ -1,0 +1,37 @@
+query GetPaymentMethods {
+  viewer {
+    paymentMethods {
+      edges {
+        node {
+          ... on Card {
+            id
+            name
+            firstSixDigits
+            lastFourDigits
+            hasExpired
+            created
+            expYear
+            expMonth
+            brand
+            assigned
+            token
+            supportedCurrencies
+          }
+          ... on ApplePayCard {
+            id
+            name
+            firstSixDigits
+            lastFourDigits
+            hasExpired
+            created
+            expYear
+            expMonth
+            brand
+            assigned
+            supportedCurrencies
+          }
+        }
+      }
+    }
+  }
+}

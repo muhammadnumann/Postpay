@@ -1,0 +1,32 @@
+mutation CreatePaymentMethod($input: CreatePaymentMethodInput!) {
+  createPaymentMethod(input: $input) {
+    paymentMethod {
+      ... on Card {
+        id
+        name
+        firstSixDigits
+        lastFourDigits
+        hasExpired
+        created
+        expYear
+        expMonth
+        brand
+        token
+        supportedCurrencies
+      }
+      ... on ApplePayCard {
+        id
+        name
+        firstSixDigits
+        lastFourDigits
+        hasExpired
+        created
+        expYear
+        expMonth
+        brand
+        token
+        supportedCurrencies
+      }
+    }
+  }
+}

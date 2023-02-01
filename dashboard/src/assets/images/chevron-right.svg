@@ -1,0 +1,7 @@
+<svg data-name="Group 8678" xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30">
+    <g style="fill:none">
+        <path d="M15 0A15 15 0 1 1 0 15 15 15 0 0 1 15 0z" style="stroke:none"/>
+        <path d="M15 2a12.915 12.915 0 0 0-9.192 3.808A12.915 12.915 0 0 0 2 15c0 3.472 1.352 6.737 3.808 9.192A12.915 12.915 0 0 0 15 28c3.472 0 6.737-1.352 9.192-3.808A12.915 12.915 0 0 0 28 15c0-3.472-1.352-6.737-3.808-9.192A12.915 12.915 0 0 0 15 2m0-2c8.284 0 15 6.716 15 15 0 8.284-6.716 15-15 15-8.284 0-15-6.716-15-15C0 6.716 6.716 0 15 0z" style="fill:#3ebbd2;stroke:none"/>
+    </g>
+    <path data-name="Path 2001" d="m0 13.122 8.9-6.561L0 0" transform="translate(11.88 8.439)" style="fill:transparent;stroke:#3ebbd2;stroke-linecap:round;stroke-linejoin:round;stroke-width:2px"/>
+</svg>

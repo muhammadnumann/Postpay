@@ -1,0 +1,69 @@
+query GetInstalmentPlanDetails($id: ID!) {
+  instalmentPlan(id: $id) {
+    id
+    created
+    completed
+    cancelled
+    totalPayable
+    totalCost
+    totalDue
+    secure
+    downpayment {
+      amount
+    }
+    paymentMethod {
+      ... on Card {
+        id
+        hasExpired
+        lastFourDigits
+        firstSixDigits
+        brand
+        supportedCurrencies
+        expMonth
+        expYear
+        token
+      }
+    }
+    order {
+      totalAmount
+      orderId
+      merchant {
+        name
+        slug
+      }
+      currency
+      items {
+        reference
+        name
+        qty
+        unitPrice
+      }
+      refunds(cancelled_Isnull: true) {
+        edges {
+          node {
+            refundId
+            amount
+            created
+          }
+        }
+      }
+      giftCard {
+        voucherId
+        backendName
+      }
+    }
+    instalments(orderBy: "scheduled") {
+      edges {
+        node {
+          id
+          amount
+          penaltyFee
+          status
+          scheduled
+          completed
+          refundedAmount
+        }
+      }
+    }
+  }
+}

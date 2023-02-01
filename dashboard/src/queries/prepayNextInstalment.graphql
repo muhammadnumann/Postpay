@@ -1,0 +1,7 @@
+mutation PrepayNextInstalment($input: PrepayNextInstalmentInput!) {
+  prepayNextInstalment(input: $input) {
+    instalment {
+      completed
+    }
+  }
+}

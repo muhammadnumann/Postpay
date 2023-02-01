@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en" prefix="og: http://ogp.me/ns#">
+  <head>
+    <title>postpay checkout</title>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <meta
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"
+      name="viewport"
+    />
+    <link rel="shortcut icon" type="image/ico" href="/favicon.ico" />
+    <title><%= htmlWebpackPlugin.options.title%></title>
+    <% for (var css in htmlWebpackPlugin.files.css) { %>
+    <link href="<%= htmlWebpackPlugin.files.css[css] %>" rel="stylesheet" />
+    <% } %>
+    <script>
+      !function(){var analytics=window.analytics=window.analytics||[];if(!analytics.initialize)if(analytics.invoked)window.console&&console.error&&console.error("Segment snippet included twice.");else{analytics.invoked=!0;analytics.methods=["trackSubmit","trackClick","trackLink","trackForm","pageview","identify","reset","group","track","ready","alias","debug","page","once","off","on","addSourceMiddleware","addIntegrationMiddleware","setAnonymousId","addDestinationMiddleware"];analytics.factory=function(e){return function(){var t=Array.prototype.slice.call(arguments);t.unshift(e);analytics.push(t);return analytics}};for(var e=0;e<analytics.methods.length;e++){var key=analytics.methods[e];analytics[key]=analytics.factory(key)}analytics.load=function(key,e){var t=document.createElement("script");t.type="text/javascript";t.async=!0;t.src="https://cdn.segment.com/analytics.js/v1/" + key + "/analytics.min.js";var n=document.getElementsByTagName("script")[0];n.parentNode.insertBefore(t,n);analytics._loadOptions=e};analytics._writeKey="vuhFQhk7tCH3YnATr9ML8cHahx2ZdDL7";;analytics.SNIPPET_VERSION="4.15.3";
+      analytics.load("vuhFQhk7tCH3YnATr9ML8cHahx2ZdDL7");
+      analytics.page();
+      }}();
+    </script>
+    <script>
+      var isIE = /*@cc_on!@*/false || !!document.documentMode;
+      document.addEventListener("DOMContentLoaded", function(event) {
+        if (isIE) {
+          document.body.classList.add('not-supported-browser');
+        }
+      });
+    </script>
+    <style>
+      .not-supported-browser-message {
+        display: none;
+      }
+
+      .not-supported-browser .not-supported-browser-message {
+        display: block;
+      }
+
+      .not-supported-browser #root {
+        display: none;
+      }
+    </style>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=<%= htmlWebpackPlugin.options.google_analytics_id%>"
+    ></script>
+
+    <% if (htmlWebpackPlugin.options.google_optimize_id) { %>
+      <script src="https://www.googleoptimize.com/optimize.js?id=<%= htmlWebpackPlugin.options.google_optimize_id%>"></script>
+    <% } %>
+
+    <script>
+      window.dataLayer = window.dataLayer || [];
+
+      window.GOOGLE_OPTIMIZE_ID =
+        '<%= htmlWebpackPlugin.options.google_optimize_id%>';
+
+      window.EXPERIMENT_ID = '<%= htmlWebpackPlugin.options.experiment_id%>';
+
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+
+      gtag('js', new Date());
+
+      gtag('config', '<%= htmlWebpackPlugin.options.google_analytics_id%>');
+
+      if (window.EXPERIMENT_ID) {
+        gtag('event', 'optimize.callback', {
+          callback: (value, name) => {
+            console.log(
+              'Experiment with ID: ' + name + ' is on variant: ' + value
+            );
+            window.VARIANT_ID = value;
+          },
+        });
+      }
+    </script>
+  </head>
+
+  <body>
+    <div class="not-supported-browser-message">Your browser is not supported</div>
+    <div id="root"></div>
+    <% for (const chunk in htmlWebpackPlugin.files.chunks) { %>
+    <script src="<%= htmlWebpackPlugin.files.chunks[chunk].entry %>"></script>
+    <% } %>
+  </body>
+
+</html>

@@ -1,0 +1,5 @@
+mutation registerPaymentMethod($input: RegisterPaymentMethodInput!) {
+  registerPaymentMethod(input: $input) {
+    success
+  }
+}

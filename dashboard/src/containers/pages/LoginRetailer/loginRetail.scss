@@ -1,0 +1,15 @@
+@import "../../../assets/styles/mixin.scss";
+
+.login-container{
+  @include small {
+    .slider-container{
+       display: none;
+    }
+    .content{
+      padding: 40px;
+    }
+    .nav-bar-container{
+      padding-left: 40px;
+    }
+  }
+}

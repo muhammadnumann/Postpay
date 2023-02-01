@@ -1,0 +1,35 @@
+query GetCustomer {
+  viewer {
+    id
+    firstName
+    lastName
+    email
+    defaultPaymentMethod {
+      ... on Card {
+        id
+        lastFourDigits
+        expMonth
+        brand
+      }
+      ... on ApplePayCard {
+        id
+        lastFourDigits
+        expMonth
+        brand
+      }
+    }
+    phone {
+      msisdn
+    }
+    idNumber
+    dateOfBirth
+    settings {
+      currency
+    }
+    avatar {
+      thumbnails(sizes: [M]) {
+        url
+      }
+    }
+  }
+}

@@ -1,0 +1,36 @@
+@import "../../../assets/styles/mixin.scss";
+
+.form-login-code{
+  .input-common{
+    input {
+      font-size: 35px;
+    }
+    border-top: solid 2px #dfdfdf;
+    padding: 16px 0;
+    padding-left: 20px;
+  }
+}
+
+
+.login-container{
+  .content{
+    // padding-left: 120px;
+  }
+  @include small {
+    .sub-title-login{
+      font-size: 18px;
+    }
+    .welcome-login{
+      margin-bottom: 22px;
+    }
+    .slider-container{
+       display: none;
+    }
+    .content{
+      padding: 40px;
+    }
+    .nav-bar-container{
+      padding-left: 40px;
+    }
+  }
+}

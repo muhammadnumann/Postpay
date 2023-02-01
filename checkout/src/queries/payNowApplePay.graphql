@@ -1,0 +1,5 @@
+mutation PayNowApplePay($input: PayNowApplePayInput!) {
+  payNowApplePay(input: $input) {
+    status
+  }
+}

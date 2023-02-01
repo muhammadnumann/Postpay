@@ -1,0 +1,10 @@
+mutation ChangePhone($input: ChangePhoneInput!) {
+  changePhone(input: $input) {
+    throttle {
+      limit
+      reset
+      remaining
+      retryAfter
+    }
+  }
+}

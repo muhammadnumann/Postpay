@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="50.146" height="50.147" viewBox="0 0 50.146 50.147">
+    <defs>
+        <style>
+            .cls-1{fill:#8abbd5}
+        </style>
+    </defs>
+    <g id="plus-button">
+        <g id="Group_1457" data-name="Group 1457">
+            <path id="Path_925" d="M25.073 50.147a25.073 25.073 0 1 1 25.072-25.074 25.1 25.1 0 0 1-25.072 25.074zm0-47.283a22.208 22.208 0 1 0 22.206 22.209A22.234 22.234 0 0 0 25.073 2.864z" class="cls-1" data-name="Path 925"/>
+        </g>
+        <g id="Group_1458" data-name="Group 1458" transform="translate(13.753 23.639)">
+            <path id="Path_926" d="M29.724 17.507H9.952a1.433 1.433 0 1 1 0-2.866h19.772a1.433 1.433 0 0 1 0 2.866z" class="cls-1" data-name="Path 926" transform="translate(-8.518 -14.641)"/>
+        </g>
+        <g id="Group_1459" data-name="Group 1459" transform="translate(23.639 13.753)">
+            <path id="Path_927" d="M16.075 31.156a1.433 1.433 0 0 1-1.434-1.432V9.952a1.433 1.433 0 1 1 2.866 0v19.772a1.43 1.43 0 0 1-1.432 1.432z" class="cls-1" data-name="Path 927" transform="translate(-14.641 -8.518)"/>
+        </g>
+    </g>
+</svg>

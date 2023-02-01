@@ -1,0 +1,8 @@
+mutation PrepayInstalmentPlan($input: PrepayInstalmentPlanInput!) {
+  prepayInstalmentPlan(input: $input) {
+    prepayment {
+      id
+      success
+    }
+  }
+}

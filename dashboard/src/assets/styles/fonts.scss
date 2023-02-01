@@ -1,0 +1,132 @@
+@layer base {
+
+  @font-face {
+    font-family: Cairo-Bold;
+    font-display: swap;
+    src: url("../fonts/Cairo-Bold.ttf") format("opentype");
+  }
+
+  @font-face {
+    font-family: Cairo-Regular;
+    font-display: swap;
+    src: url("../fonts/Cairo-Regular.ttf") format("opentype");
+  }
+
+  @font-face {
+    font-family: Madani-Arabic-Bold;
+    font-display: swap;
+    src: url("../fonts/Madani-Arabic-Bold.ttf") format("truetype");
+  }
+
+  @font-face {
+    font-family: Madani-Arabic-Regular;
+    font-display: swap;
+    src: url("../fonts/Madani-Arabic-Regular.ttf") format("truetype");
+  }
+
+  @font-face {
+    font-family: Madani-Arabic-Medium;
+    font-display: swap;
+    src: url("../fonts/Madani-Arabic-Medium.ttf") format("truetype");
+  }
+
+  @font-face {
+    font-family: Madani-Arabic-SemiBold;
+    font-display: swap;
+    src: url("../fonts/Madani-Arabic-SemiBold.ttf")
+      format("truetype");
+  }
+
+  @font-face {
+    font-family: Madani-Arabic-Light;
+    font-display: swap;
+    src: url("../fonts/Madani-Arabic-Light.ttf") format("truetype");
+  }
+
+  @font-face {
+    font-family: Madani-Arabic-Extra-Light;
+    font-display: swap;
+    src: url("../fonts/Madani-Arabic-Extra-Light.ttf")
+      format("truetype");
+  }
+
+  @font-face {
+    font-family: GreycliffCF-Bold;
+    font-display: swap;
+    src: url("../fonts/GreycliffCF-Bold.otf") format("opentype");
+  }
+
+  @font-face {
+    font-family: GreycliffCF-BoldOblique;
+    font-display: swap;
+    src: url("../fonts/GreycliffCF-BoldOblique.otf")
+      format("opentype");
+  }
+
+  @font-face {
+    font-family: GreycliffCF-Medium;
+    font-display: swap;
+    src: url("../fonts/GreycliffCF-Medium.otf") format("opentype");
+  }
+
+  @font-face {
+    font-family: GreycliffCF-Light;
+    font-display: swap;
+    src: url("../fonts/GreycliffCF-Light.otf") format("opentype");
+  }
+
+  @font-face {
+    font-family: GreycliffCF-Regular;
+    font-display: swap;
+    src: url("../fonts/GreycliffCF-Regular.otf") format("opentype");
+  }
+
+  @font-face {
+    font-family: GreycliffCF-Heavy;
+    font-display: swap;
+    src: url("../fonts/GreycliffCF-Heavy.otf") format("opentype");
+  }
+
+  @font-face {
+    font-family: GreycliffCF-DemiBold;
+    font-display: swap;
+    src: url("../fonts/GreycliffCF-DemiBold.otf") format("opentype");
+  }
+
+  @font-face {
+    font-family: GreycliffCF-ExtraBold;
+    font-display: swap;
+    src: url("../fonts/GreycliffCF-ExtraBold.otf") format("opentype");
+  }
+
+  @font-face {
+    font-family: slick;
+    font-display: swap;
+    src: url("../fonts/slick.ttf") format("truetype");
+  }
+
+  @font-face {
+    font-family: slick;
+    font-display: swap;
+    src: url("../fonts/slick.woff") format("opentype");
+  }
+
+  .postpay-locale-ar {
+    --font-bold: 'Madani-Arabic-Bold', 'GreycliffCF-Bold' !important;
+    --font-demi-bold: 'Madani-Arabic-SemiBold', 'GreycliffCF-DemiBold' !important;
+    --font-medium: 'Madani-Arabic-Medium', 'GreycliffCF-Medium' !important;
+    --font-light: 'Madani-Arabic-Light', 'GreycliffCF-Light' !important;
+    --font-regular: 'Madani-Arabic-Regular', 'GreycliffCF-Regular' !important;
+    direction: rtl!important;
+  }
+
+  .postpay-locale-en {
+    --font-bold: 'GreycliffCF-Bold'!important;
+    --font-demi-bold: 'GreycliffCF-DemiBold'!important;
+    --font-medium: 'GreycliffCF-Medium'!important;
+    --font-light: 'GreycliffCF-Light'!important;
+    --font-regular: 'GreycliffCF-Regular'!important;
+  }
+
+
+}

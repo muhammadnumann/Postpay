@@ -1,0 +1,13 @@
+-r lint.txt
+
+coverage==5.5
+django-coverage-plugin==2.0.0
+factory-boy==3.2.0
+freezegun==1.1.0
+iso4217==1.9.20220401
+pytest==6.2.4
+pytest-cov==2.12.1
+pytest-django==4.4.0
+pytest-env==0.6.2
+pytest-xdist==2.2.1
+responses==0.13.3

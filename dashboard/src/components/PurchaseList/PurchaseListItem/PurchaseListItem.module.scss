@@ -1,0 +1,10 @@
+
+:global(.postpay-locale-ar) {
+  .view_details_button {
+    transform: scale(-1);
+  }
+}
+
+.startAnimation {
+  @apply translate-y-0 opacity-100;
+}

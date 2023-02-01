@@ -1,0 +1,99 @@
+{
+  "id": "Q2hlY2tvdXQ6MzUyZWJiOTNkYTFmNGI1MThmNDc3ZTAwN2FhMzljNGQ=",
+  "customer": null,
+  "paymentInterval": null,
+  "numInstalments": 2,
+  "verified": null,
+  "completed": null,
+  "configurable": true,
+  "secure": true,
+  "preApproved": null,
+  "settings": {
+    "cancelUrl": "http://woocommerce.postpay.io/wc-api/postpay/?action=cancel&order_key=wc_order_TRCxgTzfNdEfo",
+    "confirmationUrl": "http://woocommerce.postpay.io/wc-api/postpay/?action=capture&order_key=wc_order_TRCxgTzfNdEfo",
+    "__typename": "Settings"
+  },
+  "checkoutType": "DEFAULT",
+  "order": {
+    "id": "T3JkZXI6OWYxMGE3NDNhYmNhNDIzOWIyMTRiMGM0OWI2MDFiN2E=",
+    "orderId": "519-6135cb39b33f1",
+    "totalAmount": 8600,
+    "taxAmount": 0,
+    "status": "pending",
+    "shipping": {
+      "amount": 2000,
+      "address": {
+        "firstName": "David",
+        "lastName": "tran",
+        "phone": "",
+        "__typename": "Address"
+      },
+      "__typename": "Shipping"
+    },
+    "billingAddress": {
+      "firstName": "David",
+      "lastName": "tran",
+      "phone": "055 432 3432",
+      "__typename": "Address"
+    },
+    "currency": "SAR",
+    "merchant": {
+      "id": "TWVyY2hhbnQ6aWRfYzU2NzA1ZjFhOTMwNGU4YzhhMTZlMWRhOThlYzg3MzQ=",
+      "paymentOptions": {
+        "edges": [
+          {
+            "node": {
+              "id": "UGF5bWVudE9wdGlvbjphNTIzYjg2YjMwZTU0NjVhOTZmYjdmYmJhNmQ3ODgzMw==",
+              "numInstalments": 2,
+              "interval": null,
+              "__typename": "PaymentOption"
+            },
+            "__typename": "PaymentOptionEdge"
+          },
+          {
+            "node": {
+              "id": "UGF5bWVudE9wdGlvbjo3NDFiNTFlMTk4ZjM0ODNmOWQxNjEyMmZhZGVjYmRkMw==",
+              "numInstalments": 3,
+              "interval": null,
+              "__typename": "PaymentOption"
+            },
+            "__typename": "PaymentOptionEdge"
+          }
+        ],
+        "__typename": "PaymentOptionConnection"
+      },
+      "countries": [
+        {
+          "name": "United Arab Emirates",
+          "callingCodes": ["971"],
+          "__typename": "Country"
+        },
+        {
+          "name": "Saudi Arabia",
+          "callingCodes": ["966"],
+          "__typename": "Country"
+        }
+      ],
+      "name": "Development",
+      "__typename": "Merchant"
+    },
+    "items": [
+      {
+        "name": "Beanie",
+        "unitPrice": 1800,
+        "reference": "16",
+        "qty": 2,
+        "__typename": "Item"
+      },
+      {
+        "name": "Album",
+        "unitPrice": 1500,
+        "reference": "24",
+        "qty": 2,
+        "__typename": "Item"
+      }
+    ],
+    "__typename": "Order"
+  },
+  "__typename": "Checkout"
+}

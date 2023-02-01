@@ -1,0 +1,29 @@
+.outer {
+  display: inline-block;
+}
+
+.container {
+  display: inline-flex;
+  flex-direction: row;
+  align-items: center;
+  direction: ltr;
+}
+
+.integer_number {
+  font-weight: bold;
+  font-size: 1em;
+  line-height: 10px;
+}
+
+.decimal_number {
+  font-weight: bold;
+  line-height: 8px;
+}
+
+.currency {
+  font-weight: bold;
+  font-size: 1em;
+  margin-right: 3px;
+  line-height: 10px;
+  text-transform: uppercase;
+}

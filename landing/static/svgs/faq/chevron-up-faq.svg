@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="14.284" height="8.142" viewBox="0 0 14.284 8.142">
+    <defs>
+        <style>
+            .cls-1{fill:#888888}
+        </style>
+    </defs>
+    <g id="arrow-point-to-right" transform="rotate(90 7.142 7.142)">
+        <path id="Path_67" d="M7.849 7.849l-6.141 6.142a1 1 0 1 1-1.415-1.415l5.434-5.434L.293 1.708A1 1 0 0 1 1.708.293l6.141 6.142a1 1 0 0 1 0 1.414z" class="cls-1" data-name="Path 67"/>
+    </g>
+</svg>

@@ -1,0 +1,2 @@
+checkout-sdk==2.0b9
+slackclient==2.9.3

@@ -1,0 +1,6 @@
+-r common.txt
+-r debug.txt
+
+ipython==7.24.1
+pip-upgrader==1.4.15
+Werkzeug==2.0.1

@@ -1,0 +1,52 @@
+mutation CheckCode($input: CheckCodeInput!) {
+  checkCode(input: $input) {
+    checkout {
+      id
+      checkoutType
+      customer {
+        id
+        firstName
+        lastName
+        dateOfBirth
+        idNumber
+        phone {
+          msisdn
+        }
+        email
+        paymentMethods {
+          edges {
+            node {
+              ... on Card {
+                id
+                name
+                firstSixDigits
+                lastFourDigits
+                hasExpired
+                created
+                expYear
+                expMonth
+                brand
+                token
+                supportedCurrencies
+              }
+            }
+          }
+        }
+      }
+      order {
+        customer {
+          email
+        }
+      }
+      verified
+      completed
+    }
+    throttle {
+      remaining
+      reset
+      retryAfter
+      limit
+    }
+    clientMutationId
+  }
+}

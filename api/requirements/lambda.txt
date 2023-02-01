@@ -1,0 +1,7 @@
+-r production.txt
+
+aws-xray-sdk==2.8.0
+Collectfast==2.2.0
+django-storages==1.11.1
+troposphere==2.7.1
+zappa==0.54.0

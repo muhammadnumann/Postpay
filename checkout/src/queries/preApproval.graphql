@@ -1,0 +1,6 @@
+mutation PreApproval($input: PreApprovalInput!) {
+  preApproval(input: $input) {
+    success
+    code
+  }
+}

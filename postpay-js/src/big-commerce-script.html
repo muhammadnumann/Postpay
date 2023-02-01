@@ -1,0 +1,36 @@
+<script async="" src="https://cdn.postpay.io/v1/js/postpay.js"></script>
+<script>
+  window.postpayAsyncInit = function () {
+    var NUM_INSTALMENTS = 3;
+
+    postpay.init({
+      merchantId: 'id_c56705f1a9304e8c8a16e1da98ec8734',
+      sandbox: false,
+      locale: ['en', 'ar'].includes(navigator.language)
+        ? navigator.language
+        : 'en',
+      widgetUrl: 'https://widgets-dev.postpay.io',
+      checkoutApiUrl: 'https://api-dev.postpay.io/graphql/checkout',
+      checkoutUrl: 'https://checkout-dev.postpay.io',
+    });
+
+    fetch('/api/storefront/order/{{checkout.order.id}}?include=payments', {
+      credentials: 'include',
+    })
+      .then(function (response) {
+        return response.json();
+      })
+      .then(function (checkout) {
+        if (
+          checkout.payments &&
+          checkout.payments[0].providerId === 'cheque'
+        ) {
+          postpay.bigcommerce.checkout(checkout.orderId, {
+            currency: checkout.currency.code,
+            amount: checkout.orderAmount,
+            num_instalments: NUM_INSTALMENTS,
+          });
+        }
+      });
+  };
+</script>

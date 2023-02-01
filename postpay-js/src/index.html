@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>postpayjs</title>
+    <script>
+      //id_00cb2fda6cc14d89b1852692dde7b912 -> prod
+      //id_c56705f1a9304e8c8a16e1da98ec8734 -> dev (dynamic)
+      //id_c56705f1a9304e8c8a16e1da98ec8734
+      function init() {
+        postpay.init({
+          merchantId: 'id_c8d1c62500e74be283b5b6fea481e042',
+          sandbox: false,
+          locale: 'en',
+        });
+
+        // postpay.ui.infoModal({
+        //   amount: 10050,
+        //   currency: 'SAR',
+        //   container: '.info-modal',
+        //   closeButton: false,
+        // });
+
+      }
+
+      window.postpayAsyncInit = function () {
+        init();
+
+        postpay.shopify.checkout('117', {
+          currency: 'AED',
+          amount: 1111,
+          num_instalments: 3,
+        });
+      };
+    </script>
+    <script
+      async
+      src="<%= htmlWebpackPlugin.files.chunks.app.entry %>"
+    ></script>
+    <style>
+      <% if (DEMO_THEME == 'dark') { %>
+      body {
+        background: black;
+        color: white;
+      }
+      <% } %>
+
+      * {
+        box-sizing: border-box;
+      }
+
+      .checkout-button {
+        width: 150px;
+        height: 30px;
+        border-radius: 5px;
+        background-color: white;
+      }
+
+      .postpay-instalment-wiget {
+        width: 500px;
+        max-width: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>postpay-js</h1>
+    <!-- <h3>checkout example</h3> -->
+    <div class="info-modal"></div>
+
+    <h1>One button</h1>
+    <div class="postpay-widget" data-type="one-button"></div>
+
+    <button
+      class="checkout-button"
+      onclick="postpay.checkout('<%= DEMO_MERCHANT_ID %>', {locale: 'en'})"
+    >
+      open checkout modal
+    </button>
+    <button
+      class="checkout-button"
+      onclick="postpay.check_amount({ amount: 10000, currency: 'AED', callback: (result) => { console.log('Checkout amount', result)} })"
+    >
+      checkout_amount
+    </button>
+    <h3>widget example</h3>
+
+    <!-- <div
+      class="postpay-widget"
+      data-type="product"
+      data-amount="<%= DEMO_PRODUCT_PRICE %>"
+      data-currency="AED"
+      data-num-instalments="1"
+    ></div> -->
+    <!-- <div
+      class="postpay-widget"
+      data-type="payment-summary"
+      data-amount="1500"
+      data-currency="SAR"
+      data-num-instalments="3"
+    ></div> -->
+    <!--
+    <div
+    class="postpay-widget"
+    data-type="payment-summary"
+    data-amount="<%= DEMO_PRODUCT_PRICE %>"
+    data-currency="AED"
+    data-num-instalments="3"
+  ></div> -->
+    <!-- <div
+      class="postpay-widget"
+      data-type="payment-summary"
+      data-amount="<%= DEMO_PRODUCT_PRICE %>"
+      data-currency="AED"
+    ></div> -->
+    <div
+      class="postpay-widget"
+      data-type="payment-summary"
+      data-amount="7500"
+      data-currency="AED"
+      data-num-instalments="3"
+      data-text-default="true"
+      data-theme="light"
+    ></div>
+    <div
+      class="postpay-widget"
+      data-type="payment-summary"
+      data-amount="7500"
+      data-currency="AED"
+      data-num-instalments="3"
+      data-text-default="true"
+      data-theme="blue"
+    ></div>
+    <div
+      class="postpay-widget"
+      data-type="payment-summary"
+      data-amount="7500"
+      data-currency="AED"
+      data-num-instalments="3"
+      data-text-default="true"
+      data-theme="dark"
+    ></div>
+    <!-- <div
+      class="postpay-widget"
+      data-type="product"
+      data-amount="1500"
+      data-currency="SAR"
+      data-locale="en"
+      data-variant="non-default"
+    ></div> -->
+     <div
+      class="postpay-widget"
+      data-type="product"
+      data-amount="7500"
+      data-currency="SAR"
+      data-num-instalments="3"
+      data-theme="dark"
+
+    ></div>
+    <br />
+    <div
+    class="postpay-widget"
+    data-type="product"
+    data-amount="7500"
+    data-currency="AED"
+    data-text-default="true"
+    data-theme="dark"
+    data-num-instalments="3"
+  ></div>
+
+    <br />
+    <div
+      class="postpay-widget"
+      data-type="product"
+      data-amount="7500"
+      data-currency="AED"
+      data-text-default="true"
+      data-theme="light"
+      data-num-instalments="3"
+    ></div>
+    <br />
+    <div
+      class="postpay-widget"
+      data-type="product"
+      data-amount="7500"
+      data-currency="AED"
+      data-text-default="true"
+      data-theme="blue"
+      data-num-instalments="3"
+    ></div>
+    <br />
+    <br />
+    <div
+      class="postpay-widget"
+      data-type="product"
+      data-amount="7500"
+      data-currency="AED"
+      data-text-default="true"
+      data-num-instalments="3"
+    ></div>
+    <br />
+  </body>
+</html>

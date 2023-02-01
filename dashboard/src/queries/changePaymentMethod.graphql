@@ -1,0 +1,7 @@
+mutation ChangePaymentMethod($input: ChangePaymentMethodInput!) {
+  changePaymentMethod(input: $input) {
+    instalmentPlan {
+      id
+    }
+  }
+}

@@ -1,0 +1,71 @@
+.postpay-loader{
+  height: 43px !important;
+  width: 43px !important;
+  position: relative !important;
+  animation: spin infinite 2s !important;
+  ul{
+    list-style: none !important;
+    li{
+      height: 10px !important;
+      width: 10px !important;
+      border-radius: 50% !important;
+      position: absolute !important;
+    }
+    :nth-child(1), :nth-child(2){
+      left: 50% !important;
+      transform: translateX(-50%) !important;
+    }
+    :nth-child(1){
+      top: .5px !important;
+      background-color: #b4b4b4 !important;
+    }
+    :nth-child(2){
+      bottom: .5px !important;
+      background-color: #b4b4b4 !important;
+    }
+    :nth-child(3), :nth-child(4){
+      top: 50% !important;
+      transform: translateY(-50%) !important;
+    }
+    :nth-child(3){
+      right: 1px !important;
+      background-color: #b4b4b4 !important;
+    }
+    :nth-child(4){
+      left: 1px !important;
+      background-color: #b4b4b4 !important;
+    }
+    :nth-child(5), :nth-child(6){
+      top: 24% !important;
+      transform: translateY(-50%) !important;
+    }
+    :nth-child(5){
+      right: calc(12.5%) !important;
+      background-color: #b4b4b4 !important;
+    }
+    :nth-child(6){
+      left: calc(12.5%) !important;
+      background-color: #b4b4b4 !important;
+    }
+    :nth-child(7), :nth-child(8){
+      bottom: 23% !important;
+      transform: translateY(50%) !important;
+    }
+    :nth-child(7){
+      right: 12.5% !important;
+      background-color: #b4b4b4 !important;
+    }
+    :nth-child(8){
+      left: 12.5% !important;
+      background-color: #b4b4b4 !important;
+    }
+
+  }
+}
+
+@keyframes spin {
+    from {transform:rotate(0deg);}
+    to {transform:rotate(360deg);}
+}
+
+

@@ -1,0 +1,23 @@
+{% load i18n %}
+{% load sidebar %}
+
+{% for section in menu %}
+<div class="module{% if section|is_active:request.path %} current-app{% endif %}{% if section.rows %} has-rows{% endif %}">
+    <table>
+
+    <caption>
+        {% if section.icon %}<i class="{{ section.icon }}"></i>{% endif %}
+        <a href="{{ section.url }}"{% if section.target_blank %} target=_blank{% endif %} class="section" title="{% blocktranslate with name=section.label %}Sections in {{ name }}{% endblocktranslate %}">{% translate section.label|capfirst %}</a>
+    </caption>
+
+    {% if section.rows %}
+        {% for row in section.rows %}
+        <tr{% if row.url in request.path %} class="current-model"{% endif %}>
+            <th scope="row"><a href="{{ row.url }}"{% if row.url in request.path %} aria-current="page"{% endif %}{% if row.target_blank %} target=_blank{% endif %}>{{ row.label }}</a></th>
+            <td></td>
+        </tr>                    
+        {% endfor %}
+    {% endif %}
+    </table>
+</div>
+{% endfor %}

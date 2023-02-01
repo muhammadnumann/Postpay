@@ -1,0 +1,13 @@
+{% extends "admin/change_list.html" %}
+
+{% load static %}
+
+{% block extrastyle %}
+{{ block.super }}
+<style>
+#changelist-filter {
+    flex: 0 0 170px;
+    margin: 0 0 0 15px;
+}
+</style>
+{% endblock %}

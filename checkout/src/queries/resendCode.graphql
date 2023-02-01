@@ -1,0 +1,22 @@
+mutation ResendCode($input: ResendCodeInput!) {
+  resendCode(input: $input) {
+    checkout {
+      id
+      customer {
+        firstName
+        lastName
+        phone {
+          msisdn
+        }
+      }
+      verified
+      completed
+    }
+    throttle {
+      remaining
+      reset
+      retryAfter
+      limit
+    }
+  }
+}

@@ -1,0 +1,89 @@
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Effect": "Allow",
+            "Action": [
+                "logs:*"
+            ],
+            "Resource": "arn:aws:logs:*:*:*"
+        },
+        {
+            "Effect": "Allow",
+            "Action": [
+                "xray:PutTraceSegments",
+                "xray:PutTelemetryRecords"
+            ],
+            "Resource": [
+                "*"
+            ]
+        },
+        {
+            "Effect": "Allow",
+            "Action": [
+                "ec2:CreateNetworkInterface",
+                "ec2:AttachNetworkInterface",
+                "ec2:DescribeNetworkInterfaces",
+                "ec2:DeleteNetworkInterface"
+            ],
+            "Resource": [
+                "*"
+            ]
+        },
+        {
+            "Effect": "Allow",
+            "Action": [
+                "lambda:InvokeFunction",
+                "lambda:GetAlias",
+                "lambda:GetFunction"
+            ],
+            "Resource": [
+                "arn:aws:lambda:*:*:function:api-sandbox"
+            ]
+        },
+        {
+            "Effect": "Allow",
+            "Action": [
+                "lambda:InvokeFunction"
+            ],
+            "Resource": [
+                "arn:aws:lambda:*:*:function:connect-sandbox",
+                "arn:aws:lambda:*:*:function:mjml-sandbox-to-html",
+                "arn:aws:lambda:*:*:function:html-to-pdf-prod"
+            ]
+        },
+        {
+            "Effect": "Allow",
+            "Action": [
+                "s3:GetObject"
+            ],
+            "Resource": [
+                "arn:aws:s3:::postpay-config/api/sandbox/*"
+            ]
+        },
+        {
+            "Effect": "Allow",
+            "Action": [
+                "s3:*"
+            ],
+            "Resource": [
+                "arn:aws:s3:::static-api.postpay.io/*"
+            ]
+        },
+        {
+            "Effect": "Allow",
+            "Action": [
+                "dynamodb:*"
+            ],
+            "Resource": [
+                "arn:aws:dynamodb:*:*:table/bincodes",
+                "arn:aws:dynamodb:*:*:table/ip-lookups",
+                "arn:aws:dynamodb:*:*:table/verify-codes-sandbox",
+                "arn:aws:dynamodb:*:*:table/cards-sandbox",
+                "arn:aws:dynamodb:*:*:table/gateway-tokens-sandbox",
+                "arn:aws:dynamodb:*:*:table/direct-payments-sandbox",
+                "arn:aws:dynamodb:*:*:table/hook-logs-sandbox"
+            ]
+        }
+    ]
+}

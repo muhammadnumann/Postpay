@@ -1,0 +1,10 @@
+.connect_line {
+  width: calc(80%);
+  @apply absolute lg:h-[2px] h-[1px] top-1/2 lg:left-[55%] left-[57%] -translate-x-1/2;
+}
+
+:global(.postpay-locale-ar) {
+  .connect_line {
+    @apply left-auto right-[47px] translate-x-0 -scale-x-100;
+  }
+}

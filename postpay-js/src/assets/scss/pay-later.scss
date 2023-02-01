@@ -1,0 +1,210 @@
+.postpay-pay-later-widget {
+  display: block !important;
+  position: relative !important;
+  background: white !important;
+
+  &:after {
+    content: '' !important;
+    width: 1px !important;
+    height: 100% !important;
+    position: absolute !important;
+    top: 0 !important;
+    bottom: 0 !important;
+    left: 50% !important;
+    background-color: rgba(0, 0, 0, 0.1) !important;
+    transform: translateX(-50%) !important;
+  }
+
+  .postpay-product-price {
+    font-family: var(--font-light);
+  }
+}
+
+.postpay-pay-later-widget-header {
+  position: relative;
+  display: flex !important;
+  align-items: center !important;
+  padding-top: 8px !important;
+}
+
+.postpay-pay-later-column-title {
+  text-align: center !important;
+  flex-grow: 1 !important;
+  font-family: var(--font-bold);
+  font-size: 1em !important;
+  color: #6d6e71 !important;
+  padding-bottom: 7px !important;
+}
+
+.postpay-pay-later-column-separator {
+  font-family: var(--font-bold);
+  font-size: 1em !important;
+  color: #6d6e71 !important;
+  z-index: 10 !important;
+  padding-bottom: 7px !important;
+  background: white !important;
+  position: absolute;
+  left: 50%;
+  top: 9px;
+  transform: translate(-50%);
+}
+
+.postpay-pay-later-column-list {
+  display: flex !important;
+}
+
+.postpay-pay-later-column {
+  padding: 10px 20px !important;
+  width: 50% !important;
+  display: flex;
+  flex-direction: column;
+
+  &.other-instalments {
+    color: #727376 !important;
+    display: block;
+  }
+
+  &.two-instalments {
+    .postpay-pay-later-item {
+      padding-bottom: 40px !important;
+    }
+
+    .postpay-pay-later-item-text {
+      padding: 0 !important;
+      margin-top: -3px !important;
+    }
+  }
+
+  &.four-instalments {
+    justify-content: space-between !important;
+
+    .postpay-pay-later-item {
+      flex-grow: 1 !important;
+      padding-bottom: 0 !important;
+      min-height: 69px !important;
+
+      &::after {
+        display: none !important;
+      }
+    }
+  }
+}
+
+.postpay-pay-later-item {
+  display: flex !important;
+  padding-bottom: 20px !important;
+  position: relative !important;
+
+  &:after {
+    content: '' !important;
+    width: 1px !important;
+    position: absolute !important;
+    top: 36px !important;
+    bottom: 0 !important;
+    left: 18px !important;
+    background-color: rgba(0, 0, 0, 0.1) !important;
+  }
+
+  &:last-child {
+    padding-bottom: 0 !important;
+
+    .postpay-pay-later-item-image-wrapper::after{
+      display: none !important;
+    }
+
+    &::after {
+      display: none !important;
+    }
+  }
+}
+
+.postpay-pay-later-item-content {
+  display: flex !important;
+  align-items: flex-start !important;
+}
+
+.postpay-pay-later-item-image-wrapper {
+  display: flex !important;
+  align-items: center !important;
+  position: relative !important;
+
+  &:after {
+    content: '' !important;
+    width: 1px !important;
+    position: absolute !important;
+    top: calc(50% + 18px) !important;
+    height: 60px !important;
+    bottom: 0 !important;
+    left: 18px !important;
+    background-color: rgba(0, 0, 0, 0.1) !important;
+  }
+}
+
+.postpay-pay-later-item-image {
+  position: relative !important;
+  width: 36px !important;
+  height: 36px !important;
+  max-width: 36px !important;
+  max-height: 36px !important;
+  min-width: 36px !important;
+  min-height: 36px !important;
+  margin: 0 15px 0 0 !important;
+  z-index: 10 !important;
+  float: none !important;
+  background: white !important;
+  padding: 0 !important;
+}
+
+.postpay-pay-later-item-title {
+  font-family: var(--font-bold);
+  font-size: 0.85em !important;
+  color: #6d6e71 !important;
+  margin-bottom: 5px !important;
+}
+
+.postpay-pay-later-item-description {
+  font-family: var(--font-light);
+  font-size: 0.85em !important;
+  color: #727376 !important;
+}
+
+.postpay-pay-later-item-currency {
+  text-transform: uppercase !important;
+}
+
+.postpay-pay-later-notice {
+  position: relative !important;
+  background-color: #949799 !important;
+  color: white !important;
+  text-align: center !important;
+  padding: 7px 0 !important;
+  z-index: 10 !important;
+  font-family: var(--font-bold);
+  font-size: 1em !important;
+}
+
+.postpay-locale-ar {
+  .postpay-pay-later-item-image {
+    margin: 0 0 0 15px !important;
+  }
+
+
+  .postpay-pay-later-item-image-wrapper:after {
+    right: 18px!important;
+    left: auto!important;
+  }
+
+  .postpay-pay-later-item:after {
+    right: 18px!important;
+    left: auto!important;
+  }
+
+  &.postpay-pay-now-widget img.secure-payment-img {
+    margin-left: 5px!important;
+    margin-right: 0!important;
+  }
+
+  .postpay-learn-more-modal-close {
+    right: 15px!important;
+  }
+}

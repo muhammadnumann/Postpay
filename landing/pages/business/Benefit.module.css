@@ -1,0 +1,9 @@
+.custom-banner > {
+  background-position: 0 -159px;
+}
+
+@media screen and (max-width: 500px) {
+  .custom-banner > {
+    background-position: 0 0;
+  }
+}

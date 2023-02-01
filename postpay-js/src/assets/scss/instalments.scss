@@ -1,0 +1,344 @@
+.postpay-disabled {
+  opacity: 0.4;
+}
+
+.postpay-instalment-widget {
+  margin-top: 5px !important;
+  font-family: var(--font-light);
+  -webkit-font-smoothing: auto !important;
+}
+
+.postpay-instalment-helper-text {
+  background: #f5f7f8 !important;
+  color: black !important;
+  font-size: 0.75em !important;
+  padding: 10px 20px !important;
+  font-family: var(--font-light);
+  margin-bottom: 5px !important;
+}
+
+.postpay-payment-summary-wrapper {
+  padding: 0px !important;
+}
+
+.postpay-payment-summary {
+  display: block !important;
+}
+
+.postpay-payment-summary-header {
+  display: flex !important;
+  align-items: center !important;
+  margin-bottom: 4px !important;
+}
+
+.postpay-payment-summary-header-image {
+  margin-right: 5px !important;
+
+  svg {
+    width: 24px !important;
+  }
+}
+
+.postpay-locale-ar .postpay-payment-summary-header-image {
+  margin-right: 0px !important;
+  margin-left: 5px !important;
+}
+
+.postpay-payment-summary-header-title {
+  font-size: 1em !important;
+  font-family: var(--font-medium) !important;
+  color: #252524 !important;
+  padding-bottom: 8px !important;
+}
+
+.postpay-payment-summary-content {
+  max-width: 463px !important;
+  background-color: white !important;
+  flex-grow: 1 !important;
+  max-height: max-content !important;
+  padding: 5px 8px 13px 8px !important;
+  border-radius: 3px ;
+}
+
+.postpay-payment-summary-schedule-text {
+  margin-bottom: 10px !important;
+  margin-top: 5px !important;
+  font-family: var(--font-light);
+}
+
+.postpay-payment-schedule-list {
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: flex-start !important;
+  justify-content: flex-start !important;
+  margin: 0 auto !important;
+
+  &.postpay-payment-schedule-list-2 {
+    justify-content: center !important;
+
+    .postpay-payment-summary-schedule-item {
+      margin-right: 20px !important;
+
+      &:last-child {
+        margin-right: 0 !important;
+        margin-left: 20px !important;
+      }
+    }
+  }
+}
+
+.postpay-locale-ar {
+  .postpay-payment-schedule-list.postpay-payment-schedule-list-2 .postpay-payment-summary-schedule-item {
+    margin-left: 20px !important;
+
+    &:last-child {
+      margin-left: 0 !important;
+      margin-right: 20px !important;
+    }
+  }
+}
+
+.postpay-payment-summary-schedule-item {
+  position: relative !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: flex-start !important;
+  justify-content: flex-start !important;
+  font-family: var(--font-light);
+  width: 100% !important;
+
+  &:last-child {
+    margin-right: 0 !important;
+  }
+
+  &:last-child::before {
+    display: none !important;
+  }
+}
+
+.postpay-payment-summary-schedule-line {
+  position: relative !important;
+
+  &:after {
+    content: '' !important;
+    position: absolute !important;
+    top: 19px !important;
+    left: 50% !important;
+    width: 135px !important;
+    height: 1px !important;
+    transform: translate(-50%, -50%) !important;
+    background: rgba(0, 0, 0, 0.1) !important;
+  }
+}
+
+.postpay-payment-summary-schedule-progress {
+  width: unset !important;
+  height: unset !important;
+  max-width: unset !important;
+  max-height: unset !important;
+  margin-bottom: unset !important;
+  float: none !important;
+
+  &-container {
+    display: flex !important;
+    align-items: center !important;
+    width: 100% !important;
+  }
+
+  &-line {
+    height: 1px !important;
+    background: rgba(62, 187, 210, 1) !important;
+    flex: 1 !important;
+    margin: 0 8px !important;
+  }
+}
+
+.postpay-payment-summary-schedule-instalment-name {
+  color: #4d4d4d !important;
+  margin-bottom: 5px !important;
+  text-align: center !important;
+  font-size: 0.85em !important;
+}
+
+.postpay-payment-summary-schedule-price {
+  color: #000 !important;
+  text-align: center !important;
+  font-size: 11px;
+  font-family: var(--font-medium);
+
+  .postpay-payment-summary-schedule-price-currency {
+    font-family: var(--font-medium) !important;
+  }
+}
+
+
+.postpay-payment-summary-schedule-period,
+.postpay-payment-summary-schedule-date {
+  font-size: 11px !important;
+  color: rgb(136, 136, 136) !important;
+  text-align: left !important;
+}
+
+.postpay-payment-summary-schedule-date {
+  text-transform: capitalize !important;
+}
+
+.postpay-instalment-notice {
+  display: flex !important;
+  flex-direction: row !important;
+  padding: 6px 10px !important;
+  background: #848483 !important;
+  border-radius: 5px !important;
+  align-items: center !important;
+  margin-top: 7px !important;
+  font-family: var(--font-light);
+  margin-top: 5px !important;
+}
+
+.postpay-instalment-notice-zero {
+  font-size: 1.1em !important;
+  margin-right: 5px !important;
+  color: white !important;
+}
+
+.postpay-instalment-notice-text {
+  font-size: 0.9em !important;
+  color: white !important;
+  text-align: center !important;
+  flex-grow: 1 !important;
+}
+
+@media screen and (max-width: 500px) {
+  .postpay-payment-summary-schedule-line {
+    position: relative !important;
+
+    &:after {
+      width: 25px !important;
+    }
+  }
+
+  .postpay-payment-summary-schedule-item {
+    position: relative !important;
+  }
+}
+
+
+.postpay-pay-now-widget {
+  background: #f5f7f8 !important;
+  padding: 10px 15px !important;
+  border-radius: 3px !important;
+}
+
+.postpay-pay-now-description {
+  font-family: var(--font-light);
+  color: #252524 !important;
+  font-size: 1em !important;
+  margin-bottom: 6px !important;
+
+  strong {
+    font-family: var(--font-bold);
+  }
+}
+
+.postpay-pay-now-footer {
+  font-family: var(--font-light);
+  color: #252524 !important;
+  font-size: 0.8em !important;
+
+  img {
+    vertical-align: middle !important;
+    float: none !important;
+  }
+}
+
+.postpay-pay-now-widget img.secure-payment-img {
+  display: inline-block !important;
+  margin-right: 5px !important;
+}
+
+/**
+DARK THEME
+*/
+.postpay-pay-now-widget.dark {
+  background: #292929 !important;
+
+  .postpay-pay-now-description {
+    color: white !important;
+  }
+
+  img.secure-payment-img {
+    filter: invert(1) !important;
+  }
+}
+
+.postpay-instalment-widget.dark {
+  .postpay-instalment-helper-text {
+    background-color: #292929 !important;
+    color: white !important;
+  }
+
+  .postpay-instalment-notice {
+    background: #292929 !important;
+  }
+
+  .postpay-payment-summary-header-title,
+  .postpay-payment-summary-schedule-text,
+  .postpay-payment-summary-schedule-instalment-name,
+  .postpay-payment-summary-schedule-price,
+  .postpay-payment-summary-schedule-period,
+  .postpay-payment-summary-schedule-date {
+    color: white !important;
+  }
+
+  .postpay-instalment-notice-zero,
+  .postpay-instalment-notice-text {
+    color: white !important;
+  }
+
+}
+
+.postpay-payment-summary-list-benefit {
+  padding: 0 18px !important;
+  margin-left: 0px !important;
+  margin-right: 0px !important;
+
+  &>li {
+    color: rgb(0, 0, 0) !important;
+    font-size: 13px !important;
+    font-family: var(--font-medium) !important;
+    margin-bottom: 3px !important;
+
+    &:last-child {
+      margin-bottom: 0 !important;
+    }
+  }
+}
+
+.btn-postpay-shopify-checkout {
+  font-family: var(--font-bold);
+  font-size: 1rem !important;
+  cursor: pointer !important;
+  font-weight: bold !important;
+  background-color: #8bbbd5 !important;
+  color: white !important;
+  border-radius: 5px !important;
+  border-width: 1px !important;
+  border-style: solid !important;
+  border-image: initial !important;
+  border-color: #8bbbd5 !important;
+  padding: 13px 15px !important;
+  margin: auto !important;
+  display: block !important;
+
+  &:disabled {
+    cursor: not-allowed;
+  }
+}
+
+.heading-2.os-step__title.approved::after {
+  content: 'Your order is approved' !important;
+}
+
+.heading-2.os-step__title.denied::after {
+  content: 'Your order is denied' !important;
+}

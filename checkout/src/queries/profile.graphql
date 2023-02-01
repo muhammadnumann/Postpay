@@ -1,0 +1,39 @@
+mutation SetProfile($input: ProfileInput!) {
+  profile(input: $input) {
+    checkout {
+      id
+      customer {
+        id
+        firstName
+        lastName
+        dateOfBirth
+        idNumber
+        phone {
+          msisdn
+        }
+        paymentMethods {
+          edges {
+            node {
+              ... on Card {
+                id
+                name
+                firstSixDigits
+                lastFourDigits
+                hasExpired
+                created
+                expYear
+                expMonth
+                brand
+                token
+                supportedCurrencies
+              }
+            }
+          }
+        }
+      }
+      verified
+      completed
+    }
+    clientMutationId
+  }
+}

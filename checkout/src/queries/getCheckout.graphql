@@ -1,0 +1,102 @@
+query GetCheckout($token: String!) {
+  checkout(token: $token) {
+    id
+    customer {
+      id
+      firstName
+      lastName
+      email
+      dateOfBirth
+      idNumber
+      phone {
+        msisdn
+      }
+      email
+      paymentMethods {
+        edges {
+          node {
+            ... on Card {
+              id
+              name
+              firstSixDigits
+              lastFourDigits
+              hasExpired
+              created
+              expYear
+              expMonth
+              brand
+              token
+              type
+              supportedCurrencies
+            }
+          }
+        }
+      }
+    }
+    paymentInterval
+    numInstalments
+    verified
+    completed
+    configurable
+    secure
+    preApproved
+    settings {
+      cancelUrl
+      confirmationUrl
+    }
+    checkoutType
+    order {
+      id
+      orderId
+      totalAmount
+      taxAmount
+      status
+      customer {
+        email
+      }
+      shipping {
+        amount
+        address {
+          firstName
+          lastName
+          phone
+        }
+      }
+      billingAddress {
+        firstName
+        lastName
+        phone
+      }
+      currency
+      merchant {
+        id
+        decodedId
+        paymentOptions(
+          numInstalments_Gt: 1
+          orderBy: "num_instalments"
+          oneCheckout: false
+        ) {
+          edges {
+            node {
+              id
+              numInstalments
+              interval
+              dynamicDownpayment
+            }
+          }
+        }
+        countries {
+          name
+          callingCodes
+        }
+        name
+      }
+      items {
+        name
+        unitPrice
+        reference
+        qty
+      }
+    }
+  }
+}

@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="18.124" height="18.124" viewBox="0 0 18.124 18.124">
+    <defs>
+        <style>
+            .cls-1{fill:none;stroke:#000001;stroke-linecap:round}
+        </style>
+    </defs>
+    <g id="Group_8330" data-name="Group 8330" transform="translate(.707 .707)">
+        <path id="Path_4420" data-name="Path 4420" class="cls-1" d="M0 0v23.631" transform="rotate(45 8.355 20.17)"/>
+        <path id="Path_4421" data-name="Path 4421" class="cls-1" d="M0 0v23.631" transform="rotate(-45)"/>
+    </g>
+</svg>
